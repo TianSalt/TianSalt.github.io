@@ -1,33 +1,96 @@
 ---
 layout: home
-
-hero:
-  name: "TianSalt's Blog"
-  text: "记录生活，分享技术"
-  tagline: 代码 · 思考 · 成长
-  image:
-    src: /hero.svg
-    alt: Blog Hero
-  actions:
-    - theme: brand
-      text: 开始阅读
-      link: /posts/hello
-    - theme: alt
-      text: GitHub
-      link: https://github.com
-
-features:
-  - icon: 🚀
-    title: 极速构建
-    details: 基于 VitePress，享受毫秒级的热更新和极速的构建速度
-  - icon: 🎨
-    title: 简洁优雅
-    details: Markdown 写作，专注于内容本身，让表达更纯粹
-  - icon: 📱
-    title: 响应式设计
-    details: 完美适配各种设备，随时随地记录和阅读
-  - icon: 🌙
-    title: 深色模式
-    details: 支持明暗主题切换，保护你的眼睛
 ---
 
+<script setup>
+import { onBeforeMount } from 'vue'
+
+onBeforeMount(() => {
+  const userLang = navigator.language || navigator.userLanguage || 'en'
+  let targetPath = '/en/'
+  
+  if (userLang.startsWith('zh')) {
+    targetPath = '/zh-Hant/'
+  } else if (userLang.startsWith('ja')) {
+    targetPath = '/ja/'
+  }
+  
+  const storedLang = localStorage.getItem('preferred-language')
+  if (storedLang) {
+    switch(storedLang) {
+      case 'zh-Hant': targetPath = '/zh-Hant/'; break
+      case 'ja-JP': targetPath = '/ja/'; break
+      default: targetPath = '/en/'
+    }
+  }
+  
+  window.location.replace(targetPath)
+})
+</script>
+
+<template>
+  <div class="language-select">
+    <h2>鹽語屋</h2>
+    <p>Select your language:</p>
+    <div class="language-buttons">
+      <a href="/zh-Hant/" class="lang-btn">中文</a>
+      <a href="/en/" class="lang-btn">English</a>
+      <a href="/ja/" class="lang-btn">日本語</a>
+    </div>
+  </div>
+</template>
+
+<style scoped>
+.language-select {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.language-select h2 {
+  font-size: 2rem;
+  margin-block: 1rem;
+}
+
+.language-select p {
+  font-size: 1.2rem;
+  margin-block-end: 2rem;
+  color: var(--vp-c-text-2);
+}
+
+.language-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.lang-btn {
+  display: inline-block;
+  padding-block: 0.75rem;
+  padding-inline: 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--vp-c-brand-1);
+  background-color: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.lang-btn:hover,
+.lang-btn:focus {
+  background-color: var(--vp-c-brand-1);
+  color: var(--vp-c-white);
+  border-color: var(--vp-c-brand-1);
+}
+
+.lang-btn:focus {
+  outline: 2px solid var(--vp-c-brand-1);
+  outline-offset: 2px;
+}
+</style>

@@ -1,0 +1,129 @@
+/* 無障礙增強樣式 - 使用邏輯屬性支援多種書寫方向 */
+
+*:focus-visible {
+  outline: 2px solid var(--vp-c-brand-1);
+  outline-offset: 2px;
+}
+
+@media (prefers-contrast: high) {
+  :root {
+    --vp-c-text-1: #000;
+    --vp-c-text-2: #333;
+    --vp-c-border: #000;
+  }
+  
+  .dark {
+    --vp-c-text-1: #fff;
+    --vp-c-text-2: #ccc;
+    --vp-c-border: #fff;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.skip-to-content {
+  position: absolute;
+  inset-block-start: -40px;
+  inset-inline-start: 0;
+  background: var(--vp-c-brand-1);
+  color: var(--vp-c-white);
+  padding: 8px 16px;
+  z-index: 999;
+  transition: inset-block-start 0.3s;
+}
+
+.skip-to-content:focus {
+  inset-block-start: 0;
+}
+
+/* 確保文本可讀性 */
+body {
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+}
+
+/* 移除所有字體設置 */
+:root {
+  --vp-font-family-base: inherit;
+}
+
+/* 重置 VitePress 的字體設置，讓瀏覽器使用默認字體 */
+body,
+.vp-doc {
+  font-family: inherit;
+}
+
+/* 保持 monospace 元素使用瀏覽器默認的 monospace 字體 */
+code,
+pre,
+kbd,
+samp {
+  font-family: monospace;
+}
+
+/* 重置 VitePress 的 monospace 變量 */
+:root {
+  --vp-font-family-mono: monospace;
+}
+
+/* 圖片無障礙 */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 表格無障礙 - 使用邏輯屬性 */
+table {
+  border-collapse: collapse;
+  width: max-content;
+  max-width: 100%;
+}
+
+th,
+td {
+  border: 1px solid var(--vp-c-border);
+  padding: 0.75rem;
+  text-align: start;
+}
+
+th {
+  background-color: var(--vp-c-bg-soft);
+  font-weight: 600;
+}
+
+/* 表單元素無障礙 - 使用邏輯屬性 */
+input,
+textarea,
+select {
+  font-size: 1rem;
+  padding: 0.5rem;
+  border: 1px solid var(--vp-c-border);
+  border-radius: 4px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid var(--vp-c-brand-1);
+  outline-offset: 2px;
+}
