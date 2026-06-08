@@ -4,6 +4,7 @@ export default defineConfig({
   title: "TianSalt's Blog",
   description: '代码 · 思考 · 成长',
   lang: 'zh-CN',
+  base: '/',
   themeConfig: {
     nav: [
       { text: '首页', link: '/' },

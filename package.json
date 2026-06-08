@@ -11,16 +11,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TianSalt/blog.git"
+    "url": "git+https://github.com/TianSalt/TianSalt.github.io.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/TianSalt/blog/issues"
+    "url": "https://github.com/TianSalt/TianSalt.github.io/issues"
   },
-  "homepage": "https://github.com/TianSalt/blog#readme",
+  "homepage": "https://github.com/TianSalt/TianSalt.github.io#readme",
   "devDependencies": {
     "vitepress": "^1.6.4",
     "vue": "^3.5.35"
