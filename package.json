@@ -25,5 +25,10 @@
     "@mdit/plugin-katex": "^0.25.2",
     "vitepress": "^1.6.4",
     "vue": "^3.5.35"
+  },
+  "dependencies": {
+    "@fontsource/ibm-plex-sans": "^5.2.8",
+    "@fontsource/ibm-plex-sans-jp": "^5.2.8",
+    "@ibm/plex-sans-tc": "^1.1.1"
   }
 }

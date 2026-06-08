@@ -1,4 +1,4 @@
-/* 無障礙增強樣式 - 使用邏輯屬性支援多種書寫方向 */
+/* Accessibility enhancements - using logical properties to support multiple writing directions */
 
 *:focus-visible {
   outline: 2px solid var(--vp-c-brand-1);
@@ -56,43 +56,73 @@
   inset-block-start: 0;
 }
 
-/* 確保文本可讀性 */
+/* Ensure text readability */
 body {
   line-height: 1.6;
   letter-spacing: 0.01em;
 }
 
-/* 移除所有字體設置 */
+/* Code font - 0xProto */
+@font-face {
+  font-family: '0xProto';
+  src: url('/fonts/0xProto-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: '0xProto';
+  src: url('/fonts/0xProto-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: '0xProto';
+  src: url('/fonts/0xProto-Italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Font settings - auto-switch based on language */
 :root {
-  --vp-font-family-base: inherit;
+  --vp-font-family-base: 'IBM Plex Sans', sans-serif;
+  --vp-font-family-mono: '0xProto', 'IBM Plex Sans', 'IBM Plex Sans JP', 'IBM Plex Sans TC', sans-serif;
 }
 
-/* 重置 VitePress 的字體設置，讓瀏覽器使用默認字體 */
-body,
-.vp-doc {
-  font-family: inherit;
+:lang(zh-Hant) {
+  --vp-font-family-base: 'IBM Plex Sans', 'IBM Plex Sans TC', sans-serif;
 }
 
-/* 保持 monospace 元素使用瀏覽器默認的 monospace 字體 */
+:lang(ja-JP) {
+  --vp-font-family-base: 'IBM Plex Sans', 'IBM Plex Sans JP', sans-serif;
+}
+
 code,
 pre,
 kbd,
 samp {
-  font-family: monospace;
+  font-family: var(--vp-font-family-mono);
+  font-variant-ligatures: no-common-ligatures no-discretionary-ligatures no-historical-ligatures no-contextual;
 }
 
-/* 重置 VitePress 的 monospace 變量 */
-:root {
-  --vp-font-family-mono: monospace;
+body,
+.vp-doc {
+  font-family: var(--vp-font-family-base);
 }
 
-/* 圖片無障礙 */
+
+
+/* Image accessibility */
 img {
   max-width: 100%;
   height: auto;
 }
 
-/* 表格無障礙 - 使用邏輯屬性 */
+/* Table accessibility - using logical properties */
 table {
   border-collapse: collapse;
   width: max-content;
@@ -111,7 +141,7 @@ th {
   font-weight: 600;
 }
 
-/* 表單元素無障礙 - 使用邏輯屬性 */
+/* Form element accessibility - using logical properties */
 input,
 textarea,
 select {
