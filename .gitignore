@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# VitePress output
+.vitepress/dist/
+.vitepress/cache/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor directories
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+.env.*.local
