@@ -1,31 +1,73 @@
 ---
-title: 首頁
+title: 字體排印測試
 ---
+# 字體排印測試
 
-> **聲明：本文內容由 AI 生成，僅作為示例展示博客功能。**
+## 標點擠壓
 
-# 你好，世界！
+測試標點符號在不同位置的排版效果：
 
-歡迎來到我的博客！這是我在這裡的第一篇文章。
+行首標點：
+、這是測試
+。另一個測試
+「引號測試」
 
-## 關於這個博客
+行尾標點：
+這是測試，
+另一個測試。
+「引號測試」
 
-這是一個基於 **VitePress** 構建的個人博客。選擇 VitePress 的原因很簡單：
+連續標點：
+「『嵌套引號測試』」
+（（雙括號測試））
+，，，連續逗號
 
-- ⚡ **快速** - 基於 Vite，開發體驗極佳
-- 🎯 **簡潔** - 專注於寫作，不被工具干擾
-- 🌙 **美觀** - 默認主題就很漂亮
+混合標點：
+這是「測試」，另一個（示例）。
+中文標點與英文Punctuation混用。
 
-## 代碼高亮
+## 中英文混排
 
-來看看一段漂亮的代碼：
+測試中英文自動間距（無手動空格）：
+
+- 中文English中文：這是English測試
+- 中文123中文：版本2.0於2026年發布
+- English中文：VitePress博客
+- 中文English：個人Blog
+- 混合句子：This is中文test withEnglish混排
+
+長段落測試：
+這是一段包含English文字的中文段落，用來測試VitePress的字體排印效果。這裡有JavaScript代碼、Python腳本、以及各種123數字。排版應該自動處理中文和English之間的間距，不需要手動添加空格。
+
+## 數字
+
+阿拉伯數字：1234567890
+
+百分比：99.9%
+
+年份：2026年
+
+## 引號測試
+
+單引號：「這是單引號」
+
+雙引號：『這是雙引號』
+
+嵌套：「『嵌套引號測試』」
+
+英文引號："English quotation"
+
+## 代碼
+
+測試代碼字體渲染（應使用0xProto字體）：
 
 ```javascript
-const greeting = (name) => {
-  console.log(`Hello, ${name}! Welcome to my blog.`)
-}
+const fibonacci = (n) => {
+  if (n <= 1) return n;
+  return fibonacci(n - 1) + fibonacci(n - 2);
+};
 
-greeting('World')
+console.log(fibonacci(10)); // 輸出: 55
 ```
 
 ```python
@@ -36,35 +78,93 @@ def fibonacci(n):
     return fibonacci(n - 1) + fibonacci(n - 2)
 
 for i in range(10):
-    print(fibonacci(i), end=' ')
+    print(fibonacci(i))
+```
+
+```rust
+fn fibonacci(n: u64) -> u64 {
+    match n {
+        0 => 0,
+        1 => 1,
+        _ => fibonacci(n - 1) + fibonacci(n - 2),
+    }
+}
+
+fn main() {
+    for i in 0..10 {
+        println!("{}", fibonacci(i));
+    }
+}
 ```
 
 ## 數學公式
 
-VitePress 支援數學公式渲染：
+測試數學公式的渲染效果：
+
+### 行內公式
+
+這是一個行內公式 $E = mc^2$，愛因斯坦的質能方程。
+
+勾股定理：$a^2 + b^2 = c^2$
+
+二次公式：$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$
+
+### 塊級公式
+
+質能方程：
 
 $$
 E = mc^2
 $$
 
+歐拉公式：
+
+$$
+e^{i\pi} + 1 = 0
+$$
+
+### 積分與求和
+
+定積分：
+
+$$
+\int_{0}^{\infty} e^{-x^2} dx = \frac{\sqrt{\pi}}{2}
+$$
+
+求和公式：
+
 $$
 \sum_{i=1}^{n} i = \frac{n(n+1)}{2}
 $$
 
-## 表格
+### 矩陣
 
-| 語言 | 特點 | 適用場景 |
-|------|------|----------|
-| JavaScript | 靈活、動態 | 前端開發 |
-| Python | 簡潔、易學 | 數據科學 |
-| Rust | 安全、高效 | 系統編程 |
+$$
+\begin{pmatrix}
+a & b \\
+c & d
+\end{pmatrix}
+\begin{pmatrix}
+x \\
+y
+\end{pmatrix}
+=
+\begin{pmatrix}
+ax + by \\
+cx + dy
+\end{pmatrix}
+$$
 
-## 引用
+### 希臘字母
 
-> DUMMY
-> 
-> — DUMMY
+$\alpha$, $\beta$, $\gamma$, $\delta$, $\epsilon$, $\pi$, $\omega$
 
-## 繼續探索
+### 其他數學符號
 
-DUMMY
+$$
+\lim_{x \to 0} \frac{\sin x}{x} = 1
+$$
+
+$$
+\frac{\partial f}{\partial x} = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}
+$$

@@ -7,7 +7,7 @@ export default {
     nav: [
       { text: '首頁', link: '/zh-Hant/' },
       { text: '文章', link: '/zh-Hant/posts/hello' },
-      { text: '無障礙', link: '/zh-Hant/accessibility' }
+      { text: '指南', link: '/zh-Hant/accessibility' }
     ],
     sidebar: [
       {

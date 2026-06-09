@@ -7,7 +7,7 @@ export default {
     nav: [
       { text: 'Home', link: '/en/' },
       { text: 'Posts', link: '/en/posts/hello' },
-      { text: 'Accessibility', link: '/en/accessibility' }
+      { text: 'Guide', link: '/en/accessibility' }
     ],
     sidebar: [
       {

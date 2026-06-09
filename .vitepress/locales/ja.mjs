@@ -7,7 +7,7 @@ export default {
     nav: [
       { text: 'ホーム', link: '/ja/' },
       { text: '投稿', link: '/ja/posts/hello' },
-      { text: 'アクセシビリティ', link: '/ja/accessibility' }
+      { text: 'ガイド', link: '/ja/accessibility' }
     ],
     sidebar: [
       {

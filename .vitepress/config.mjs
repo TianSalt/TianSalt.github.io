@@ -2,14 +2,13 @@ import { defineConfig } from 'vitepress'
 import zhHantLocale from './locales/zh-Hant.mjs'
 import enLocale from './locales/en.mjs'
 import jaLocale from './locales/ja.mjs'
-import { katex } from '@mdit/plugin-katex'
 
 export default defineConfig({
   title: "Yányǔwū",
   description: 'DUMMY',
   lang: 'en-US',
   base: '/',
-  
+
   head: [
     ['meta', { name: 'theme-color', content: '#3eaf7c' }],
     ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }],
@@ -46,7 +45,7 @@ export default defineConfig({
   themeConfig: {
     logo: '/logo.svg',
     siteTitle: "鹽語屋",
-    
+
     socialLinks: [
       { icon: 'github', link: 'https://github.com/TianSalt', ariaLabel: 'GitHub' }
     ],
@@ -83,9 +82,7 @@ export default defineConfig({
     image: {
       lazyLoading: true
     },
-    config: (md) => {
-      md.use(katex)
-    }
+    math: true
   },
 
   sitemap: {
