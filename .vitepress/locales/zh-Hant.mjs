@@ -1,22 +1,42 @@
 export default {
   title: "鹽語屋",
-  description: 'DUMMY',
+  description: '理性・溫柔・可愛',
   lang: 'zh-Hant',
   label: '中文',
   themeConfig: {
     nav: [
       { text: '首頁', link: '/zh-Hant/' },
-      { text: '文章', link: '/zh-Hant/posts/hello' },
+      { text: '筆記', link: '/zh-Hant/notes/' },
+      { text: '日誌', link: '/zh-Hant/posts/hello' },
+      { text: '教程', link: '/zh-Hant/tutorials/' },
       { text: '指南', link: '/zh-Hant/accessibility' }
     ],
-    sidebar: [
-      {
-        text: '文章',
-        items: [
-          { text: '你好，世界！', link: '/zh-Hant/posts/hello' }
-        ]
-      }
-    ],
+    sidebar: {
+      '/zh-Hant/notes/': [
+        {
+          text: '筆記',
+          items: [
+            { text: '筆記首頁', link: '/zh-Hant/notes/' }
+          ]
+        }
+      ],
+      '/zh-Hant/posts/': [
+        {
+          text: '日誌',
+          items: [
+            { text: '你好，世界！', link: '/zh-Hant/posts/hello' }
+          ]
+        }
+      ],
+      '/zh-Hant/tutorials/': [
+        {
+          text: '教程',
+          items: [
+            { text: '教程首頁', link: '/zh-Hant/tutorials/' }
+          ]
+        }
+      ]
+    },
     editLink: {
       text: '在 GitHub 上編輯此頁',
       pattern: 'https://github.com/TianSalt/TianSalt.github.io/edit/main/:path'

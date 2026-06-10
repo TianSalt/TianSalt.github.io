@@ -1,22 +1,42 @@
 export default {
   title: "Yányǔwū",
-  description: 'DUMMY',
+  description: 'Rationalis, Mitis, Amabilis',
   lang: 'en-US',
   label: 'English',
   themeConfig: {
     nav: [
       { text: 'Home', link: '/en/' },
-      { text: 'Posts', link: '/en/posts/hello' },
+      { text: 'Notes', link: '/en/notes/' },
+      { text: 'Journal', link: '/en/posts/hello' },
+      { text: 'Tutorials', link: '/en/tutorials/' },
       { text: 'Guide', link: '/en/accessibility' }
     ],
-    sidebar: [
-      {
-        text: 'Posts',
-        items: [
-          { text: 'Hello, World!', link: '/en/posts/hello' }
-        ]
-      }
-    ],
+    sidebar: {
+      '/en/notes/': [
+        {
+          text: 'Notes',
+          items: [
+            { text: 'Notes Home', link: '/en/notes/' }
+          ]
+        }
+      ],
+      '/en/posts/': [
+        {
+          text: 'Journal',
+          items: [
+            { text: 'Hello, World!', link: '/en/posts/hello' }
+          ]
+        }
+      ],
+      '/en/tutorials/': [
+        {
+          text: 'Tutorials',
+          items: [
+            { text: 'Tutorials Home', link: '/en/tutorials/' }
+          ]
+        }
+      ]
+    },
     editLink: {
       text: 'Edit this page on GitHub',
       pattern: 'https://github.com/TianSalt/TianSalt.github.io/edit/main/:path'

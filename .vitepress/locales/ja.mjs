@@ -1,22 +1,42 @@
 export default {
   title: "塩語屋",
-  description: 'DUMMY',
+  description: 'ラティオーナリス・ミーティス・アマービリス',
   lang: 'ja-JP',
   label: '日本語',
   themeConfig: {
     nav: [
       { text: 'ホーム', link: '/ja/' },
-      { text: '投稿', link: '/ja/posts/hello' },
+      { text: 'ノート', link: '/ja/notes/' },
+      { text: '日記', link: '/ja/posts/hello' },
+      { text: 'チュートリアル', link: '/ja/tutorials/' },
       { text: 'ガイド', link: '/ja/accessibility' }
     ],
-    sidebar: [
-      {
-        text: '投稿',
-        items: [
-          { text: 'こんにちは、世界！', link: '/ja/posts/hello' }
-        ]
-      }
-    ],
+    sidebar: {
+      '/ja/notes/': [
+        {
+          text: 'ノート',
+          items: [
+            { text: 'ノートホーム', link: '/ja/notes/' }
+          ]
+        }
+      ],
+      '/ja/posts/': [
+        {
+          text: '日記',
+          items: [
+            { text: 'こんにちは、世界！', link: '/ja/posts/hello' }
+          ]
+        }
+      ],
+      '/ja/tutorials/': [
+        {
+          text: 'チュートリアル',
+          items: [
+            { text: 'チュートリアルホーム', link: '/ja/tutorials/' }
+          ]
+        }
+      ]
+    },
     editLink: {
       text: 'GitHubでこのページを編集',
       pattern: 'https://github.com/TianSalt/TianSalt.github.io/edit/main/:path'

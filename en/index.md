@@ -3,8 +3,8 @@ layout: home
 
 hero:
   name: "Yányǔwū"
-  text: "DUMMY"
-  tagline: DUMMY
+  text: "de Seclan"
+  tagline: Rationalis, Mitis, Amabilis
   actions:
     - theme: brand
       text: Start Reading
@@ -14,16 +14,13 @@ hero:
       link: https://github.com
 
 features:
-  - icon: 🚀
-    title: Lightning Fast
-    details: Built on VitePress, enjoy millisecond-level hot updates and blazing fast builds
-  - icon: 🎨
-    title: Clean & Elegant
-    details: Write in Markdown, focus on content itself, make expression pure
-  - icon: 📱
-    title: Responsive Design
-    details: Perfectly adapts to all devices, record and read anytime, anywhere
-  - icon: 🌙
-    title: Dark Mode
-    details: Support light/dark theme switching, protect your eyes
+  - icon: 📓
+    title: Notes
+    details: Miscellany gathered from various sources
+  - icon: 📝
+    title: Journal
+    details: Everyday life and miracles
+  - icon: 📚
+    title: Tutorials
+    details: Miscellany explained step-by-step  
 ---

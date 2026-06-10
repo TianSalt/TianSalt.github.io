@@ -11,38 +11,6 @@ A multilingual personal blog built with VitePress, featuring accessibility suppo
 - ⚡ **Fast**: Built on Vite for lightning-fast performance
 - 🔄 **Extensible**: Ready for RTL languages (Arabic) and vertical scripts (Mongolian)
 
-## Project Structure
-
-```
-blog/
-├── .vitepress/
-│   ├── config.mjs          # Main configuration
-│   ├── theme/              # Custom theme
-│   │   ├── index.mjs       # Theme entry
-│   │   ├── custom.css      # Accessibility styles
-│   │   └── LanguageSwitcher.vue
-│   └── locales/            # Language-specific config
-│       ├── zh.mjs          # Chinese locale
-│       ├── en.mjs          # English locale
-│       └── ja.mjs          # Japanese locale
-├── zh-Hant/                # Traditional Chinese content
-│   ├── index.md
-│   ├── posts/
-│   └── accessibility.md
-├── en/                     # English content
-│   ├── index.md
-│   ├── posts/
-│   └── accessibility.md
-├── ja/                     # Japanese content
-│   ├── index.md
-│   ├── posts/
-│   └── accessibility.md
-├── public/                 # Static assets
-│   ├── logo.svg
-│   └── robots.txt
-└── package.json
-```
-
 ## Development
 
 ```bash

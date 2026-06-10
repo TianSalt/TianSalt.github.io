@@ -4,9 +4,9 @@ import enLocale from './locales/en.mjs'
 import jaLocale from './locales/ja.mjs'
 
 export default defineConfig({
-  title: "Yányǔwū",
-  description: 'DUMMY',
-  lang: 'en-US',
+  title: "鹽語屋",
+  description: '理性・溫柔・可愛',
+  lang: 'zh-Hant',
   base: '/',
 
   head: [
@@ -43,8 +43,8 @@ export default defineConfig({
   },
 
   themeConfig: {
-    logo: '/logo.svg',
-    siteTitle: "鹽語屋",
+    logo: '/icon.jpg',
+    siteTitle: "甜Salt",
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/TianSalt', ariaLabel: 'GitHub' }
@@ -72,7 +72,7 @@ export default defineConfig({
     },
 
     footer: {
-      message: 'Made with ❤️ and VitePress',
+      message: 'Powered by VitePress',
       copyright: 'Copyright © 2026 TianSalt'
     }
   },

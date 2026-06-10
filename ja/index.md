@@ -3,8 +3,8 @@ layout: home
 
 hero:
   name: "塩語屋"
-  text: "DUMMY"
-  tagline: DUMMY
+  text: "de Seclan"
+  tagline: <ruby>理　性<rt>ラティオーナリス</rt></ruby>・<ruby>温　和<rt>ミーティス</rt></ruby>・<ruby>可　憐<rt>アマービリス</rt></ruby>
   actions:
     - theme: brand
       text: 読み始める
@@ -14,16 +14,13 @@ hero:
       link: https://github.com
 
 features:
-  - icon: 🚀
-    title: 超高速
-    details: VitePressベース、ミリ秒単位のホットアップデートと高速ビルドを体験
-  - icon: 🎨
-    title: シンプルでエレガント
-    details: Markdownで執筆、コンテンツそのものに集中し、表現を純粋に
-  - icon: 📱
-    title: レスポンシブデザイン
-    details: あらゆるデバイスに完璧に対応、いつでもどこでも記録と閲覧
-  - icon: 🌙
-    title: ダークモード
-    details: ライト/ダークテーマ切り替え対応、目を保護
+  - icon: 📓
+    title: ノート
+    details: 様々な場所から見た雑学
+  - icon: 📝
+    title: 日記
+    details: 日常と奇跡
+  - icon: 📚
+    title: チュートリアル
+    details: 順を追って解説する雑学
 ---

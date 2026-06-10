@@ -26,9 +26,9 @@ Test punctuation placement and spacing:
 
 - Period: This is a sentence.
 - Comma: First, second, third.
-- Quotation: "Hello, world!" she said.
+- Quotation: “Hello, world!” she said.
 - Parentheses: (This is parenthetical text).
-- Apostrophe: It's a test.
+- Apostrophe: It’s a test.
 - Dashes: hyphenated-word, en–dash, em—dash
 
 ## Numbers
@@ -85,7 +85,7 @@ Test math equation rendering:
 
 ### Inline Math
 
-This is an inline equation $E = mc^2$, Einstein's mass-energy equation.
+This is an inline equation $E = mc^2$, Einstein’s mass-energy equation.
 
 Pythagorean theorem: $a^2 + b^2 = c^2$
 
@@ -99,7 +99,7 @@ $$
 E = mc^2
 $$
 
-Euler's formula:
+Euler’s formula:
 
 $$
 e^{i\pi} + 1 = 0
