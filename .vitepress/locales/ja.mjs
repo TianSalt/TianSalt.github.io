@@ -34,6 +34,19 @@ export default {
           items: [
             { text: 'チュートリアルホーム', link: '/ja/tutorials/' }
           ]
+        },
+        {
+          text: 'リーチ麻雀',
+          collapsed: false,
+          items: [
+            { text: '概要', link: '/ja/tutorials/riichi-mahjong/' },
+            {
+              text: '1. ルール',
+              items: [
+                { text: '1.1 基本的な仕組み', link: '/ja/tutorials/riichi-mahjong/chapter-01/1' }
+              ]
+            }
+          ]
         }
       ]
     },

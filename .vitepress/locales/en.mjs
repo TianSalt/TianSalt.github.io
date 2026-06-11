@@ -34,6 +34,19 @@ export default {
           items: [
             { text: 'Tutorials Home', link: '/en/tutorials/' }
           ]
+        },
+        {
+          text: 'Riichi Mahjong',
+          collapsed: false,
+          items: [
+            { text: 'Overview', link: '/en/tutorials/riichi-mahjong/' },
+            {
+              text: '1. Rules',
+              items: [
+                { text: '1.1 Basic Mechanics', link: '/en/tutorials/riichi-mahjong/chapter-01/1' }
+              ]
+            }
+          ]
         }
       ]
     },

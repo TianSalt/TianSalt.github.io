@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress'
 import zhHantLocale from './locales/zh-Hant.mjs'
 import enLocale from './locales/en.mjs'
 import jaLocale from './locales/ja.mjs'
+import footnote from 'markdown-it-footnote'
 
 export default defineConfig({
   title: "鹽語屋",
@@ -82,7 +83,10 @@ export default defineConfig({
     image: {
       lazyLoading: true
     },
-    math: true
+    math: true,
+    config: (md) => {
+      md.use(footnote)
+    }
   },
 
   sitemap: {

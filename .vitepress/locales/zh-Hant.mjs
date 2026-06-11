@@ -34,6 +34,20 @@ export default {
           items: [
             { text: '教程首頁', link: '/zh-Hant/tutorials/' }
           ]
+        },
+        {
+          text: '立直麻雀',
+          collapsed: false,
+          items: [
+            { text: '序', link: '/zh-Hant/tutorials/riichi-mahjong/' },
+            {
+              text: '1. 規則',
+              items: [
+                { text: '1.1 基本機制', link: '/zh-Hant/tutorials/riichi-mahjong/chapter-01/1' }
+              ]
+            }
+
+          ]
         }
       ]
     },
