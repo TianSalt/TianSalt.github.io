@@ -128,6 +128,10 @@ body {
   }
 }
 
+ruby {
+  text-autospace: no-autospace;
+}
+
 a {
   word-break: break-all;
 }
@@ -188,52 +192,100 @@ select:focus {
   z-index: 30;
 }
 
+.medium-zoom--opened {
+  overflow: hidden;
+}
+
 .medium-zoom--opened .medium-zoom-image {
-  max-width: 100vw;
+  max-width: 100%;
   max-height: 100vh;
   object-fit: contain;
 }
 
-sup.footnote-ref {
-  position: static;
-  display: inline-block;
+.main-figure {
+  margin: 24px 0;
+  display: flex;
+  flex-direction: column;
 }
 
-.footnote-ref a[data-title] {
-  position: relative;
-  display: inline-block;
+.image-group {
+  display: grid;
+  grid-template-columns: 100%;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .image-group {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    align-items: center;
+  }
+}
+
+.image {
+  max-inline-size: 100%;
+  block-size: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.main-figure .image-caption {
+  text-align: center;
+  margin-block-start: 12px;
+  font-size: 0.9rem;
+  color: var(--vp-c-text-2);
+}
+
+.footnote-ref a {
   cursor: help;
 }
 
-.footnote-ref a[data-title]::after {
-  content: attr(data-title);
+.custom-footnote-tooltip {
   position: absolute;
-  bottom: 130%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: max-content;
+  z-index: 9999;
   max-width: 280px;
-  white-space: normal;
+  width: max-content;
   background: var(--vp-c-bg-elv);
   color: var(--vp-c-text-1);
   border: 1px solid var(--vp-c-divider);
-  border-radius: 4px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  z-index: 99;
-  display: none;
-  padding: 3px 8px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 6px 10px;
   font-size: 13px;
   line-height: 1.75;
+  animation: fadeIn 0.15s ease-out;
 }
 
-.footnote-ref a[data-title]:hover::after {
-  display: block;
+.custom-footnote-tooltip::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -8px;
+  height: 8px;
+}
+
+.custom-footnote-tooltip ruby {
+  ruby-align: center;
+}
+
+.custom-footnote-tooltip rt {
+  font-size: 0.65em;
+  color: var(--vp-c-text-2);
+}
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(4px); 
+  }
 }
 
 m-tehai {
   font-family: 'I.Mahjong-JP', var(--vp-font-family-mono);
-  font-size: 2em;
+  font-size: 2.25em;
+  vertical-align: -0.2em;
   display: inline-block;
+  margin: 0 0.1em;
 }
 
 m-pai {
@@ -241,5 +293,5 @@ m-pai {
   font-size: 1.75em;
   vertical-align: -0.15em;
   display: inline-block;
-  margin: 0 0.2em;
+  margin: 0 0.1em;
 }

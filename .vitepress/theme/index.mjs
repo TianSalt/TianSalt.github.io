@@ -51,23 +51,103 @@ export default {
         }
       })
 
-      document.addEventListener('mouseenter', (e) => {
-        const target = e.target
-        if (target && target.tagName === 'A' && target.closest('.footnote-ref')) {
-          if (target.hasAttribute('title')) {
-            target.removeAttribute('title')
-          }
-          if (target.hasAttribute('data-title')) return
-          const targetId = target.getAttribute('href')
-          if (targetId) {
-            const footnoteContent = document.querySelector(targetId)
-            if (footnoteContent) {
-              const text = (footnoteContent.textContent || '').replace('↩', '').trim()
-              target.setAttribute('data-title', text)
+      let currentTooltip = null;
+      let leaveTimeout = null;
+
+      const openTooltip = (target) => {
+        if (target.hasAttribute('title')) {
+          target.removeAttribute('title');
+        }
+
+        if (leaveTimeout) {
+          clearTimeout(leaveTimeout);
+          leaveTimeout = null;
+        }
+
+        if (currentTooltip) return;
+
+        const targetId = target.getAttribute('href');
+        if (targetId && targetId.startsWith('#')) {
+          const footnoteContent = document.querySelector(targetId);
+          if (footnoteContent) {
+            const clone = footnoteContent.cloneNode(true);
+            const backref = clone.querySelector('.footnote-backref');
+            if (backref) backref.remove();
+
+            let htmlContent = clone.innerHTML.trim().replace(/↩/g, '').trim();
+
+            const tooltip = document.createElement('div');
+            const uniqueId = `tt-${Math.random().toString(36).substring(2, 9)}`;
+            tooltip.id = uniqueId;
+            tooltip.className = 'custom-footnote-tooltip';
+            tooltip.setAttribute('role', 'tooltip');
+            tooltip.innerHTML = htmlContent;
+            document.body.appendChild(tooltip);
+            currentTooltip = tooltip;
+
+            target.setAttribute('aria-describedby', uniqueId);
+
+            const rect = target.getBoundingClientRect();
+            const tooltipRect = tooltip.getBoundingClientRect();
+
+            let top = rect.top + window.scrollY - tooltipRect.height - 4;
+            let left = rect.left + window.scrollX + (rect.width / 2) - (tooltipRect.width / 2);
+
+            if (left < 10) left = 10;
+            if (left + tooltipRect.width > window.innerWidth - 10) {
+              left = window.innerWidth - tooltipRect.width - 10;
             }
+
+            tooltip.style.top = `${top}px`;
+            tooltip.style.left = `${left}px`;
+
+            tooltip.addEventListener('mouseenter', () => {
+              if (leaveTimeout) clearTimeout(leaveTimeout);
+            });
+            tooltip.addEventListener('mouseleave', () => closeTooltip());
           }
         }
-      }, true)
+      };
+
+      const closeTooltip = (immediate = false) => {
+        if (leaveTimeout) clearTimeout(leaveTimeout);
+
+        const destroy = () => {
+          if (currentTooltip) {
+            const trigger = document.querySelector(`[aria-describedby="${currentTooltip.id}"]`);
+            if (trigger) trigger.removeAttribute('aria-describedby');
+            currentTooltip.remove();
+            currentTooltip = null;
+          }
+        };
+
+        if (immediate === true) {
+          destroy();
+        } else {
+          leaveTimeout = setTimeout(destroy, 100);
+        }
+      };
+
+      document.addEventListener('mouseover', (e) => {
+        const target = e.target.closest('.footnote-ref a');
+        if (target) openTooltip(target);
+      }, true);
+
+      document.addEventListener('mouseout', (e) => {
+        const target = e.target.closest('.footnote-ref a');
+        if (target) closeTooltip();
+      }, true);
+
+      document.addEventListener('focusin', (e) => {
+        const target = e.target.closest('.footnote-ref a');
+        if (target) openTooltip(target);
+      }, true);
+
+      document.addEventListener('focusout', (e) => {
+        const target = e.target.closest('.footnote-ref a');
+        if (target) closeTooltip(true);
+      }, true);
+
 
       customElements.define('m-tehai', class extends HTMLElement {
         constructor() { super(); this.style.display = this.style.display || 'inline' }
@@ -80,6 +160,11 @@ export default {
       })
 
       document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && currentTooltip) {
+          closeTooltip(true);
+          e.preventDefault();
+        }
+
         if (e.key === 'Enter' || e.key === ' ') {
           const target = document.activeElement
           if (target && target.getAttribute('role') === 'button') {
