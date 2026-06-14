@@ -287,10 +287,6 @@ m-tehai {
   font-size: 2.25em;
   vertical-align: -0.2em;
   display: inline-block;
-  margin: 0 0.15em;
-  :lang(zh-Hant) :lang(ja-JP) & {
-    margin: 0 0.15em;
-  }
 }
 
 m-pai {
@@ -298,8 +294,12 @@ m-pai {
   font-size: 1.75em;
   vertical-align: -0.15em;
   display: inline-block;
+}
+
+:is(:lang(zh-Hant), :lang(ja-JP)) :is(m-tehai, m-pai) {
   margin: 0 0.15em;
-  :lang(zh-Hant) :lang(ja-JP) & {
-    margin: 0 0.15em;
-  }
+}
+
+:lang(en) :is(m-tehai, m-pai) {
+  margin: 0 0.1em;
 }
