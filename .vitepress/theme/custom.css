@@ -20,7 +20,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-
   *,
   *::before,
   *::after {
@@ -93,7 +92,8 @@
 
 /* Font settings - auto-switch based on language */
 :root {
-  --vp-font-family-base: "IBM Plex Sans", sans-serif;
+  --vp-font-family-base:
+    "IBM Plex Sans", "IBM Plex Sans JP", "BIZ UDPGothic", sans-serif;
   --vp-font-family-mono:
     "0xProto", "IBM Plex Sans", "IBM Plex Sans TC", "IBM Plex Sans JP",
     sans-serif;
@@ -104,7 +104,8 @@
 }
 
 :lang(ja-JP) {
-  --vp-font-family-base: "IBM Plex Sans", "IBM Plex Sans JP", sans-serif;
+  --vp-font-family-base:
+    "IBM Plex Sans", "IBM Plex Sans JP", "BIZ UDPGothic", sans-serif;
 }
 
 code,
@@ -112,7 +113,8 @@ pre,
 kbd,
 samp {
   font-family: var(--vp-font-family-mono);
-  font-variant-ligatures: no-common-ligatures no-discretionary-ligatures no-historical-ligatures no-contextual;
+  font-variant-ligatures: no-common-ligatures no-discretionary-ligatures
+    no-historical-ligatures no-contextual;
   letter-spacing: normal;
 }
 
@@ -137,7 +139,7 @@ a {
 }
 
 l-ja {
-  font-family: "IBM Plex Sans", "IBM Plex Sans JP", sans-serif;
+  font-family: "IBM Plex Sans", "IBM Plex Sans JP", "BIZ UDPGothic", sans-serif;
 }
 
 /* Image accessibility */
@@ -274,24 +276,30 @@ select:focus {
 }
 
 @keyframes fadeIn {
-  from { 
-    opacity: 0; 
-    transform: translateY(4px); 
+  from {
+    opacity: 0;
+    transform: translateY(4px);
   }
 }
 
 m-tehai {
-  font-family: 'I.Mahjong-JP', var(--vp-font-family-mono);
+  font-family: "I.Mahjong-JP", var(--vp-font-family-mono);
   font-size: 2.25em;
   vertical-align: -0.2em;
   display: inline-block;
-  margin: 0 0.1em;
+  margin: 0 0.15em;
+  :lang(zh-Hant) :lang(ja-JP) & {
+    margin: 0 0.15em;
+  }
 }
 
 m-pai {
-  font-family: 'I.Mahjong-JP', var(--vp-font-family-mono);
+  font-family: "I.Mahjong-JP", var(--vp-font-family-mono);
   font-size: 1.75em;
   vertical-align: -0.15em;
   display: inline-block;
-  margin: 0 0.1em;
+  margin: 0 0.15em;
+  :lang(zh-Hant) :lang(ja-JP) & {
+    margin: 0 0.15em;
+  }
 }

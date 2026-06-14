@@ -39,7 +39,7 @@ export default {
           text: 'Riichi Mahjong',
           collapsed: false,
           items: [
-            { text: 'Overview', link: '/en/tutorials/riichi-mahjong/' },
+            { text: 'Introduction', link: '/en/tutorials/riichi-mahjong/' },
             {
               text: '1. Rules',
               items: [
