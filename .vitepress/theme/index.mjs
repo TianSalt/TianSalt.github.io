@@ -30,7 +30,7 @@ export default {
   },
   enhanceApp({ app }) {
     app.config.compilerOptions.isCustomElement = (tag) => {
-      return tag === 'm-tehai' || tag === 'm-pai' || tag === 'l-ja'
+      return tag === 'm-tehai' || tag === 'm-pai' || tag === 'l-ja' || tag === 'n-w' || tag === 'm-p'
     }
 
     app.component('LanguageSwitcher', LanguageSwitcher)
@@ -157,6 +157,12 @@ export default {
       })
       customElements.define('l-ja', class extends HTMLElement {
         constructor() { super(); this.style.display = this.style.display || 'inline' }
+      })
+      customElements.define('n-w', class extends HTMLElement {
+        constructor() { super(); this.style.display = this.style.display || 'inline' }
+      })
+      customElements.define('m-p', class extends HTMLElement {
+        constructor() { super(); this.style.display = this.style.display || 'block' }
       })
 
       document.addEventListener('keydown', (e) => {

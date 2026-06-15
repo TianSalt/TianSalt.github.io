@@ -20,6 +20,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -113,8 +114,7 @@ pre,
 kbd,
 samp {
   font-family: var(--vp-font-family-mono);
-  font-variant-ligatures: no-common-ligatures no-discretionary-ligatures
-    no-historical-ligatures no-contextual;
+  font-variant-ligatures: no-common-ligatures no-discretionary-ligatures no-historical-ligatures no-contextual;
   letter-spacing: normal;
 }
 
@@ -123,7 +123,7 @@ body {
   overflow-wrap: break-word;
   text-autospace: normal;
 
-  .vp-doc :is(p, li):is(:lang(zh-Hant), :lang(ja-JP)) {
+  .vp-doc :is(p, li, dd, blockquote, td, th, figcaption):is(:lang(zh-Hant), :lang(ja-JP)) {
     text-align: justify;
     text-justify: inter-ideograph;
     text-spacing-trim: trim-start;
@@ -284,13 +284,16 @@ select:focus {
 
 m-tehai {
   font-family: "I.Mahjong-JP", var(--vp-font-family-mono);
+  color: var(--vp-c-text-1);
   font-size: 2.25em;
   vertical-align: -0.2em;
   display: inline-block;
+  line-height: 1em;
 }
 
 m-pai {
   font-family: "I.Mahjong-JP", var(--vp-font-family-mono);
+  color: var(--vp-c-text-1);
   font-size: 1.75em;
   vertical-align: -0.15em;
   display: inline-block;
@@ -302,4 +305,8 @@ m-pai {
 
 :lang(en) :is(m-tehai, m-pai) {
   margin: 0 0.1em;
+}
+
+n-w {
+  white-space: nowrap;
 }

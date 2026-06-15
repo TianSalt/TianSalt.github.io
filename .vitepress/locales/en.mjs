@@ -8,6 +8,7 @@ export default {
       { text: 'Home', link: '/en/' },
       { text: 'Notes', link: '/en/notes/' },
       { text: 'Journal', link: '/en/posts/hello' },
+      { text: 'Articles', link: '/en/articles/' },
       { text: 'Tutorials', link: '/en/tutorials/' },
       { text: 'Guide', link: '/en/accessibility' }
     ],
@@ -25,6 +26,15 @@ export default {
           text: 'Journal',
           items: [
             { text: 'Hello, World!', link: '/en/posts/hello' }
+          ]
+        }
+      ],
+      '/en/articles/': [
+        {
+          text: 'Articles',
+          items: [
+            { text: 'Articles Home', link: '/en/articles/' },
+            { text: 'Getting Started with VitePress', link: '/en/articles/getting-started-with-vitepress' }
           ]
         }
       ],

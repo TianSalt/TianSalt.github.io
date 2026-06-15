@@ -20,6 +20,9 @@ features:
   - icon: 📝
     title: 日誌
     details: 日常與奇蹟
+  - icon: 📰
+    title: 文章
+    details: 各種主題的深入探討
   - icon: 📚
     title: 教程
     details: 循序漸進講解的雜學

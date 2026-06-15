@@ -20,6 +20,9 @@ features:
   - icon: 📝
     title: Journal
     details: Everyday life and miracles
+  - icon: 📰
+    title: Articles
+    details: In-depth explorations of various topics
   - icon: 📚
     title: Tutorials
     details: Miscellany explained step-by-step  

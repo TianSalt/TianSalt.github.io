@@ -8,6 +8,7 @@ export default {
       { text: '首頁', link: '/zh-Hant/' },
       { text: '筆記', link: '/zh-Hant/notes/' },
       { text: '日誌', link: '/zh-Hant/posts/hello' },
+      { text: '文章', link: '/zh-Hant/articles/' },
       { text: '教程', link: '/zh-Hant/tutorials/' },
       { text: '指南', link: '/zh-Hant/accessibility' }
     ],
@@ -25,6 +26,15 @@ export default {
           text: '日誌',
           items: [
             { text: '你好，世界！', link: '/zh-Hant/posts/hello' }
+          ]
+        }
+      ],
+      '/zh-Hant/articles/': [
+        {
+          text: '文章',
+          items: [
+            { text: '文章首頁', link: '/zh-Hant/articles/' },
+            { text: 'VitePress 入門', link: '/zh-Hant/articles/getting-started-with-vitepress' }
           ]
         }
       ],

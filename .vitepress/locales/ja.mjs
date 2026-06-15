@@ -8,6 +8,7 @@ export default {
       { text: 'ホーム', link: '/ja/' },
       { text: 'ノート', link: '/ja/notes/' },
       { text: '日記', link: '/ja/posts/hello' },
+      { text: '記事', link: '/ja/articles/' },
       { text: 'チュートリアル', link: '/ja/tutorials/' },
       { text: 'ガイド', link: '/ja/accessibility' }
     ],
@@ -25,6 +26,15 @@ export default {
           text: '日記',
           items: [
             { text: 'こんにちは、世界！', link: '/ja/posts/hello' }
+          ]
+        }
+      ],
+      '/ja/articles/': [
+        {
+          text: '記事',
+          items: [
+            { text: '記事ホーム', link: '/ja/articles/' },
+            { text: 'VitePressを始めよう', link: '/ja/articles/getting-started-with-vitepress' }
           ]
         }
       ],

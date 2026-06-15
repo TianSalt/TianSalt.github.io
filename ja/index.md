@@ -20,6 +20,9 @@ features:
   - icon: 📝
     title: 日記
     details: 日常と奇跡
+  - icon: 📰
+    title: 記事
+    details: 様々なトピックの深い探求
   - icon: 📚
     title: チュートリアル
     details: 順を追って解説する雑学

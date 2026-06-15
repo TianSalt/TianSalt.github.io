@@ -3,6 +3,6 @@ title: Introduction
 ---
 # Introduction
 
-Welcome to this Riichi mahjong tutorial series. Today, Riichi mahjong (<l-ja>リーチ<ruby>麻雀<rt>マージャン</rt></ruby></l-ja>) can largely be treated as a synonym for Japanese mahjong, and the name comes from its signature rule, riichi.
+Welcome to the <i>riichi</i> mahjong tutorial series. Today, <i>riichi</i> mahjong can be regarded as synonymous with Japanese mahjong; this name derives from its signature rule, <i>riichi</i>.
 
-This series will be updated alongside my own mahjong study. It starts with core rules and then moves into strategy. It is suitable for readers with no mahjong background, and it also includes many edge-case rules plus practical why-behind-the-rule discussion, which beginners can skip selectively.
+This series will be updated in tandem with my own study of mahjong. It begins with fundamental rules and progresses into strategy. The tutorial is suitable for readers with no prior mahjong experience, while also covering edge-case rules and practical explanations of underlying rationale, which beginners may choose to skip as needed.
