@@ -53,7 +53,8 @@ export default {
             {
               text: '1. 規則',
               items: [
-                { text: '1.1 基本機制', link: '/zh-Hant/tutorials/riichi-mahjong/chapter-01/1' }
+                { text: '1.1 基本機制', link: '/zh-Hant/tutorials/riichi-mahjong/chapter-01/1' },
+                { text: '1.2 局、役（一）、鳴牌', link: '/zh-Hant/tutorials/riichi-mahjong/chapter-01/2' }
               ]
             }
 
