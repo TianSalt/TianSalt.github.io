@@ -17,13 +17,17 @@ features:
   - icon: 📓
     title: 筆記
     details: 從各種地方看來的雜學
+    link: /zh-Hant/notes/
   - icon: 📝
     title: 日誌
     details: 日常與奇蹟
+    link: /zh-Hant/posts/hello
   - icon: 📰
     title: 文章
     details: 各種主題的深入探討
+    link: /zh-Hant/articles/
   - icon: 📚
     title: 教程
     details: 循序漸進講解的雜學
+    link: /zh-Hant/tutorials/
 ---

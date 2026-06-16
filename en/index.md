@@ -17,13 +17,17 @@ features:
   - icon: 📓
     title: Notes
     details: Miscellany gathered from various sources
+    link: /en/notes/
   - icon: 📝
     title: Journal
     details: Everyday life and miracles
+    link: /en/posts/hello
   - icon: 📰
     title: Articles
     details: In-depth explorations of various topics
+    link: /en/articles/
   - icon: 📚
     title: Tutorials
-    details: Miscellany explained step-by-step  
+    details: Miscellany explained step-by-step
+    link: /en/tutorials/
 ---

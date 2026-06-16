@@ -134,7 +134,8 @@ ruby {
   text-autospace: no-autospace;
 }
 
-a {
+a[href^="http://"],
+a[href^="https://"] {
   word-break: break-all;
 }
 
@@ -189,6 +190,10 @@ select:focus {
   object-fit: cover;
 }
 
+.vp-doc img:not(.medium-zoom-image) {
+  cursor: zoom-in;
+}
+
 .medium-zoom-overlay,
 .medium-zoom-image--opened {
   z-index: 30;
@@ -235,6 +240,10 @@ select:focus {
   margin-block-start: 12px;
   font-size: 0.9rem;
   color: var(--vp-c-text-2);
+}
+
+.dark .transparent-image {
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 1px rgba(255, 255, 255, 0.8));
 }
 
 .footnote-ref a {

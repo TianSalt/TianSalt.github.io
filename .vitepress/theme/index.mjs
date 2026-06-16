@@ -41,15 +41,18 @@ export default {
         margin: 24
       })
 
-      document.addEventListener('click', (e) => {
+      const attachZoom = (target) => {
+        if (!target.classList.contains('medium-zoom-image')) {
+          zoom.attach(target)
+        }
+      }
+
+      document.addEventListener('mouseover', (e) => {
         const target = e.target
         if (target && target.tagName === 'IMG' && target.closest('.vp-doc')) {
-          if (!target.classList.contains('medium-zoom-image')) {
-            zoom.attach(target)
-            target.click()
-          }
+          attachZoom(target)
         }
-      })
+      }, true)
 
       let currentTooltip = null;
       let leaveTimeout = null;
