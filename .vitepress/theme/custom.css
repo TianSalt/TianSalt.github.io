@@ -94,7 +94,7 @@
 /* Font settings - auto-switch based on language */
 :root {
   --vp-font-family-base:
-    "IBM Plex Sans", "IBM Plex Sans JP", "BIZ UDPGothic", sans-serif;
+    "IBM Plex Sans", "IBM Plex Sans JP", "IBM Plex Sans TC", sans-serif;
   --vp-font-family-mono:
     "0xProto", "IBM Plex Sans", "IBM Plex Sans TC", "IBM Plex Sans JP",
     sans-serif;
