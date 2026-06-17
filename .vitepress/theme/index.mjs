@@ -15,6 +15,8 @@ import '@fontsource/ibm-plex-sans-jp/latin.css'
 import '@fontsource/ibm-plex-sans-jp/latin-ext.css'
 import '@ibm/plex-sans-tc/css/ibm-plex-sans-tc-default.min.css'
 
+import YakuName from './components/YakuName.vue'
+
 export default {
   extends: DefaultTheme,
   Layout: () => {
@@ -34,6 +36,7 @@ export default {
     }
 
     app.component('LanguageSwitcher', LanguageSwitcher)
+    app.component('YakuName', YakuName)
 
     if (typeof window !== 'undefined') {
       const zoom = mediumZoom({

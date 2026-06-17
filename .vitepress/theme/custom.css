@@ -101,7 +101,7 @@
 }
 
 :lang(zh-Hant) {
-  --vp-font-family-base: "IBM Plex Sans", "IBM Plex Sans TC", sans-serif;
+  --vp-font-family-base: "IBM Plex Sans", "IBM Plex Sans TC", "IBM Plex Sans JP", sans-serif;
 }
 
 :lang(ja-JP) {
@@ -318,4 +318,9 @@ m-pai {
 
 n-w {
   white-space: nowrap;
+}
+
+.han-badge {
+  font-weight: 600;
+  color: var(--vp-c-brand-1);
 }
