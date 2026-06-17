@@ -20,7 +20,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-
   *,
   *::before,
   *::after {
@@ -101,7 +100,8 @@
 }
 
 :lang(zh-Hant) {
-  --vp-font-family-base: "IBM Plex Sans", "IBM Plex Sans TC", "IBM Plex Sans JP", sans-serif;
+  --vp-font-family-base:
+    "IBM Plex Sans", "IBM Plex Sans TC", "IBM Plex Sans JP", sans-serif;
 }
 
 :lang(ja-JP) {
@@ -114,7 +114,8 @@ pre,
 kbd,
 samp {
   font-family: var(--vp-font-family-mono);
-  font-variant-ligatures: no-common-ligatures no-discretionary-ligatures no-historical-ligatures no-contextual;
+  font-variant-ligatures: no-common-ligatures no-discretionary-ligatures
+    no-historical-ligatures no-contextual;
   letter-spacing: normal;
 }
 
@@ -123,7 +124,11 @@ body {
   overflow-wrap: break-word;
   text-autospace: normal;
 
-  .vp-doc :is(p, li, dd, blockquote, td, th, figcaption):is(:lang(zh-Hant), :lang(ja-JP)) {
+  .vp-doc
+    :is(p, li, dd, blockquote, td, th, figcaption):is(
+      :lang(zh-Hant),
+      :lang(ja-JP)
+    ) {
     text-align: justify;
     text-justify: inter-ideograph;
     text-spacing-trim: trim-start;
@@ -136,7 +141,7 @@ ruby {
 
 a[href^="http://"],
 a[href^="https://"] {
-  word-break: break-all;
+  overflow-wrap: break-word;
 }
 
 l-ja {
@@ -233,6 +238,7 @@ select:focus {
   block-size: auto;
   border-radius: 8px;
   object-fit: cover;
+  margin-inline: auto;
 }
 
 .main-figure .image-caption {
@@ -243,7 +249,8 @@ select:focus {
 }
 
 .dark .transparent-image {
-  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 1px rgba(255, 255, 255, 0.8));
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.6))
+    drop-shadow(0 0 1px rgba(255, 255, 255, 0.8));
 }
 
 .footnote-ref a {
@@ -320,7 +327,25 @@ n-w {
   white-space: nowrap;
 }
 
-.han-badge {
+.colored-strong {
   font-weight: 600;
   color: var(--vp-c-brand-1);
+}
+
+.math-container {
+  margin: 1.2rem 0;
+  padding: 0.5rem 0.8rem;
+  border-radius: 3px;
+  background-color: var(--vp-c-bg-soft);
+  border-left: 3px solid var(--vp-c-brand-1);
+}
+
+.math-title {
+  margin: 0 0 0.3rem 0 !important;
+  font-weight: 700;
+  color: var(--vp-c-text-1);
+}
+
+.math-content {
+  line-height: 1.6;
 }
