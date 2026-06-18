@@ -20,7 +20,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-
   *,
   *::before,
   *::after {
@@ -115,7 +114,8 @@ pre,
 kbd,
 samp {
   font-family: var(--vp-font-family-mono);
-  font-variant-ligatures: no-common-ligatures no-discretionary-ligatures no-historical-ligatures no-contextual;
+  font-variant-ligatures: no-common-ligatures no-discretionary-ligatures
+    no-historical-ligatures no-contextual;
   letter-spacing: normal;
 }
 
@@ -124,8 +124,11 @@ body {
   overflow-wrap: break-word;
   text-autospace: normal;
 
-  .vp-doc :is(p, li, dd, blockquote, td, th, figcaption):is( :lang(zh-Hant),
-    :lang(ja-JP)) {
+  .vp-doc
+    :is(p, li, dd, blockquote, td, th, figcaption):is(
+      :lang(zh-Hant),
+      :lang(ja-JP)
+    ) {
     text-align: justify;
     text-justify: inter-ideograph;
     text-spacing-trim: trim-start;
@@ -246,7 +249,8 @@ select:focus {
 }
 
 .dark .transparent-image {
-  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 1px rgba(255, 255, 255, 0.8));
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.6))
+    drop-shadow(0 0 1px rgba(255, 255, 255, 0.8));
 }
 
 .footnote-ref a {
@@ -272,14 +276,8 @@ select:focus {
 .custom-footnote-tooltip::after {
   content: "";
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -8px;
+  inset: auto 0 -8px;
   height: 8px;
-}
-
-.custom-footnote-tooltip ruby {
-  ruby-align: center;
 }
 
 .custom-footnote-tooltip rt {
@@ -296,7 +294,6 @@ select:focus {
 
 m-tehai {
   font-family: "I.Mahjong-JP", var(--vp-font-family-mono);
-  color: var(--vp-c-text-1);
   font-size: 2.25em;
   vertical-align: -0.2em;
   display: inline-block;
@@ -305,11 +302,9 @@ m-tehai {
 
 m-pai {
   font-family: "I.Mahjong-JP", var(--vp-font-family-mono);
-  color: var(--vp-c-text-1);
   font-size: 1.75em;
   vertical-align: -0.15em;
-  display: inline-flex;
-  flex-wrap: wrap;
+  display: inline-block;
 }
 
 :is(:lang(zh-Hant), :lang(ja-JP)) :is(m-tehai, m-pai) {

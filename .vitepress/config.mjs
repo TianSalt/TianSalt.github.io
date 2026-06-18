@@ -11,6 +11,16 @@ export default defineConfig({
   lang: "zh-Hant",
   base: "/",
 
+  vue: {
+    template: {
+      compilerOptions: {
+        isCustomElement: (tag) => {
+          return ["m-tehai", "m-pai", "l-ja", "n-w", "m-p"].includes(tag);
+        },
+      },
+    },
+  },
+
   head: [
     ["meta", { name: "theme-color", content: "#3eaf7c" }],
     [
