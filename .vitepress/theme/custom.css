@@ -20,6 +20,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -114,8 +115,7 @@ pre,
 kbd,
 samp {
   font-family: var(--vp-font-family-mono);
-  font-variant-ligatures: no-common-ligatures no-discretionary-ligatures
-    no-historical-ligatures no-contextual;
+  font-variant-ligatures: no-common-ligatures no-discretionary-ligatures no-historical-ligatures no-contextual;
   letter-spacing: normal;
 }
 
@@ -124,11 +124,8 @@ body {
   overflow-wrap: break-word;
   text-autospace: normal;
 
-  .vp-doc
-    :is(p, li, dd, blockquote, td, th, figcaption):is(
-      :lang(zh-Hant),
-      :lang(ja-JP)
-    ) {
+  .vp-doc :is(p, li, dd, blockquote, td, th, figcaption):is( :lang(zh-Hant),
+    :lang(ja-JP)) {
     text-align: justify;
     text-justify: inter-ideograph;
     text-spacing-trim: trim-start;
@@ -249,8 +246,7 @@ select:focus {
 }
 
 .dark .transparent-image {
-  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.6))
-    drop-shadow(0 0 1px rgba(255, 255, 255, 0.8));
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 1px rgba(255, 255, 255, 0.8));
 }
 
 .footnote-ref a {
@@ -312,7 +308,8 @@ m-pai {
   color: var(--vp-c-text-1);
   font-size: 1.75em;
   vertical-align: -0.15em;
-  display: inline-block;
+  display: inline-flex;
+  flex-wrap: wrap;
 }
 
 :is(:lang(zh-Hant), :lang(ja-JP)) :is(m-tehai, m-pai) {
@@ -327,8 +324,7 @@ n-w {
   white-space: nowrap;
 }
 
-.colored-strong {
-  font-weight: 600;
+.colored {
   color: var(--vp-c-brand-1);
 }
 
