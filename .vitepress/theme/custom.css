@@ -125,18 +125,27 @@ body {
   text-autospace: normal;
 
   .vp-doc
-    :is(p, li, dd, blockquote, td, th, figcaption):is(
+    :is(p, li, dd, blockquote, td, th):is(
       :lang(zh-Hant),
       :lang(ja-JP)
     ) {
     text-align: justify;
-    text-justify: inter-ideograph;
     text-spacing-trim: trim-start;
   }
 }
 
 ruby {
   text-autospace: no-autospace;
+}
+
+.vp-doc ul,
+.vp-doc ol {
+  padding-left: 2em;
+  margin-left: 0;
+}
+
+.vp-doc li {
+  list-style-position: outside; 
 }
 
 a[href^="http://"],
@@ -260,8 +269,9 @@ select:focus {
 .custom-footnote-tooltip {
   position: absolute;
   z-index: 9999;
-  max-width: 280px;
-  width: max-content;
+  box-sizing: content-box;
+  max-width: 40ch;
+  
   background: var(--vp-c-bg-elv);
   color: var(--vp-c-text-1);
   border: 1px solid var(--vp-c-divider);
@@ -271,6 +281,7 @@ select:focus {
   font-size: 13px;
   line-height: 1.75;
   animation: fadeIn 0.15s ease-out;
+  text-align: justify;
 }
 
 .custom-footnote-tooltip::after {

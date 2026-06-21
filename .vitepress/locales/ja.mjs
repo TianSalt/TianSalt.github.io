@@ -53,7 +53,8 @@ export default {
             {
               text: '1. ルール',
               items: [
-                { text: '1.1 基本メカニズム', link: '/ja/tutorials/riichi-mahjong/chapter-01/1' }
+                { text: '1.1 基本メカニズム', link: '/ja/tutorials/riichi-mahjong/chapter-01/1' },
+                { text: '1.2 役・副露・局進行', link: '/ja/tutorials/riichi-mahjong/chapter-01/2' }
               ]
             }
           ]

@@ -24,7 +24,7 @@ features:
     link: /ja/posts/hello
   - icon: 📰
     title: 記事
-    details: 様々なトピックの深い探求
+    details: あれやこれや
     link: /ja/articles/
   - icon: 📚
     title: チュートリアル

@@ -24,7 +24,7 @@ features:
     link: /en/posts/hello
   - icon: 📰
     title: Articles
-    details: In-depth explorations of various topics
+    details: Odds and ends
     link: /en/articles/
   - icon: 📚
     title: Tutorials
