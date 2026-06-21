@@ -3,13 +3,12 @@
     <span class="yaku-stick">
       <span class="red-dot"></span>
     </span>
-    <span 
-      class="yaku-text" 
-      :class="{ 'is-english': lang === 'en' }"
-      :lang="lang"
-    >
+    <span class="yaku-text" :lang="lang">
       <ruby>
-        {{ base }}<rt v-if="ruby">{{ ruby }}</rt>
+        {{ base }}
+        <rt v-if="ruby" :class="{ 'is-english': lang === 'en' }">
+          {{ ruby }}
+        </rt>
       </ruby>
     </span>
   </span>
@@ -18,15 +17,15 @@
 <script setup>
 defineProps({
   base: { type: String, required: true },
-  ruby: { type: String, default: '' },
-  lang: { type: String, default: 'ja' }
-})
+  ruby: { type: String, default: "" },
+  lang: { type: String, default: "ja" },
+});
 </script>
 
 <style scoped>
 .yaku-stick-container {
   --yaku-component-size: 1.15rem;
-  
+
   display: inline-flex;
   align-items: baseline;
   font-size: var(--yaku-component-size);
@@ -37,20 +36,20 @@ defineProps({
   align-items: center;
   justify-content: center;
   position: relative;
-  
+
   inline-size: 1.6em;
   /* 💡 Increased from 0.05em to 0.12em for a more substantial typographic weight */
-  block-size: 0.12em; 
-  
+  block-size: 0.12em;
+
   background: linear-gradient(
-    to right, 
-    rgba(161, 161, 161, 0.15), 
+    to right,
+    rgba(161, 161, 161, 0.15),
     rgba(161, 161, 161, 0.85)
   );
-  
+
   /* A microscopic radius to take away the raw digital harshness while keeping it crisp */
-  border-radius: 0.04em; 
-  
+  border-radius: 0.04em;
+
   margin-inline-end: 0.6em;
   box-sizing: border-box;
   align-self: center;
@@ -70,27 +69,25 @@ defineProps({
   font-size: 1.15em;
   font-weight: 700;
   color: var(--vp-c-text-1);
-  font-family: 
-    "Hiragino Mincho ProN", "Hiragino Mincho Pro", 
-    "Yu Mincho", "YuMincho", 
-    "BIZ UDPMincho", "BIZ PMincho", 
-    "MS PMincho", "MS Mincho", serif;
+  font-family:
+    "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Yu Mincho", "YuMincho",
+    "BIZ UDPMincho", "BIZ PMincho", "MS PMincho", "MS Mincho", serif;
 }
 
 .yaku-text ruby {
   ruby-align: center;
 }
 
-.yaku-text.is-english {
-  font-style: italic;
-  font-family: "Times New Roman", "Times", "Garamond", "Georgia", serif;
-  text-orientation: mixed;
-}
-
 rt {
   font-size: 0.5em;
-  color: var(--vp-c-text-1); 
+  color: var(--vp-c-text-1);
   font-weight: 700;
   padding-block-end: 0.15em;
+}
+
+rt.is-english {
+  font-style: italic;
+  font-size: 0.5em;
+  font-family: "Bitter", serif;
 }
 </style>
