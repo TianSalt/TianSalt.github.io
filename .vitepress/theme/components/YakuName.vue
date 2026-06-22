@@ -87,7 +87,7 @@ rt {
 
 rt.is-english {
   font-style: italic;
-  font-size: 0.5em;
+  font-size: 0.65em;
   font-family: "Bitter", serif;
 }
 </style>
