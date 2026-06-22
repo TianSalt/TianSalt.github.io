@@ -269,9 +269,8 @@ select:focus {
 .custom-footnote-tooltip {
   position: absolute;
   z-index: 9999;
-  box-sizing: content-box;
+  box-sizing: content-box; /* 保留：用以覆蓋 VitePress 全局的 border-box */
   max-width: 40ch;
-  
   background: var(--vp-c-bg-elv);
   color: var(--vp-c-text-1);
   border: 1px solid var(--vp-c-divider);
@@ -281,13 +280,12 @@ select:focus {
   font-size: 13px;
   line-height: 1.75;
   animation: fadeIn 0.15s ease-out;
-  text-align: justify;
 }
 
 .custom-footnote-tooltip::after {
   content: "";
   position: absolute;
-  inset: auto 0 -8px;
+  bottom: -8px; /* 精簡：替代原 inset，僅保留需要的偏移量 */
   height: 8px;
 }
 
@@ -308,7 +306,7 @@ m-tehai {
   font-size: 2.25em;
   vertical-align: -0.2em;
   display: inline-block;
-  line-height: 1em;
+  line-height: 1;
 }
 
 m-pai {
