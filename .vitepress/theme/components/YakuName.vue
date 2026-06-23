@@ -1,9 +1,9 @@
 <template>
-  <span class="yaku-stick-container">
+  <span class="yaku-stick-container" :lang="lang">
     <span class="yaku-stick">
       <span class="red-dot"></span>
     </span>
-    <span class="yaku-text" :lang="lang">
+    <span class="yaku-text" :class="{ 'is-english': lang === 'en' }">
       <ruby>
         {{ base }}
         <rt v-if="ruby" :class="{ 'is-english': lang === 'en' }">
@@ -41,11 +41,9 @@ defineProps({
   /* 💡 Increased from 0.05em to 0.12em for a more substantial typographic weight */
   block-size: 0.12em;
 
-  background: linear-gradient(
-    to right,
-    rgba(161, 161, 161, 0.15),
-    rgba(161, 161, 161, 0.85)
-  );
+  background: linear-gradient(to right,
+      rgba(161, 161, 161, 0.15),
+      rgba(161, 161, 161, 0.85));
 
   /* A microscopic radius to take away the raw digital harshness while keeping it crisp */
   border-radius: 0.04em;
@@ -74,6 +72,10 @@ defineProps({
     "BIZ UDPMincho", "BIZ PMincho", "MS PMincho", "MS Mincho", serif;
 }
 
+.yaku-text.is-english {
+  font-size: 1em;
+}
+
 .yaku-text ruby {
   ruby-align: center;
 }
@@ -81,14 +83,12 @@ defineProps({
 rt {
   font-size: 0.5em;
   color: var(--vp-c-text-1);
-  font-weight: 700;
   padding-block-end: 0.15em;
 }
 
 rt.is-english {
   font-style: italic;
-  font-size: 0.65em;
-  font-weight: 400;
+  font-size: 1rem;
   font-family: "Merriweather", serif;
 }
 </style>
