@@ -6,8 +6,7 @@ const tutorials = [
   {
     title: '立直麻雀',
     link: '/zh-Hant/tutorials/riichi-mahjong/',
-    image: '/src/images/mahjong/mahjong-set.webp',
-    imageAlt: '麻雀牌具'
+    emoji: '🀄'
   }
 ]
 </script>

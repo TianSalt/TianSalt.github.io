@@ -15,9 +15,7 @@ defineProps({
       :href="tutorial.link"
       class="tutorial-card"
     >
-      <div class="tutorial-card-image">
-        <img :src="tutorial.image" :alt="tutorial.imageAlt" data-no-zoom />
-      </div>
+      <div class="tutorial-card-emoji">{{ tutorial.emoji }}</div>
       <div class="tutorial-card-content">
         <h3 class="tutorial-card-title" v-html="tutorial.title"></h3>
         <span class="tutorial-card-arrow" aria-hidden="true">→</span>
@@ -70,22 +68,10 @@ defineProps({
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
-.tutorial-card-image {
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-  background: var(--vp-c-bg);
-}
-
-.tutorial-card-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-  pointer-events: none;
-}
-
-.tutorial-card:hover .tutorial-card-image img {
-  transform: scale(1.05);
+.tutorial-card-emoji {
+  font-size: 3rem;
+  line-height: 1;
+  padding: 24px 24px 0;
 }
 
 .tutorial-card-content {
