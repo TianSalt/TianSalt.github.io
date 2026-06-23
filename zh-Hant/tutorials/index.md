@@ -1,8 +1,17 @@
 ---
 title: 教程
 ---
+<script setup>
+const tutorials = [
+  {
+    title: '立直麻雀',
+    link: '/zh-Hant/tutorials/riichi-mahjong/',
+    image: '/src/images/mahjong/mahjong-set.webp',
+    imageAlt: '麻雀牌具'
+  }
+]
+</script>
+
 # 教程
 
-> ⚠️ 這是 AI 生成的 dummy 頁面，僅用於測試佈局。
-
-歡迎來到教程區。
+<TutorialCardGrid :tutorials="tutorials" />

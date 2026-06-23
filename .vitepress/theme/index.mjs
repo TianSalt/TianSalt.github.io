@@ -16,6 +16,7 @@ import "@fontsource/ibm-plex-sans-jp/latin-ext.css";
 import "@ibm/plex-sans-tc/css/ibm-plex-sans-tc-default.min.css";
 
 import YakuName from "./components/YakuName.vue";
+import TutorialCardGrid from "./components/TutorialCardGrid.vue";
 
 export default {
   extends: DefaultTheme,
@@ -40,6 +41,7 @@ export default {
   enhanceApp({ app }) {
     app.component("LanguageSwitcher", LanguageSwitcher);
     app.component("YakuName", YakuName);
+    app.component("TutorialCardGrid", TutorialCardGrid);
 
     if (typeof window === "undefined") return;
 
@@ -49,6 +51,7 @@ export default {
     });
 
     const attachZoom = (target) => {
+      if (target.hasAttribute("data-no-zoom")) return;
       if (!target.classList.contains("medium-zoom-image")) {
         zoom.attach(target);
       }
