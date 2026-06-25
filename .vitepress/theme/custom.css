@@ -148,9 +148,8 @@ ruby {
   list-style-position: outside; 
 }
 
-a[href^="http://"],
-a[href^="https://"] {
-  overflow-wrap: break-word;
+.url {
+  word-break: break-all;
 }
 
 l-ja {
