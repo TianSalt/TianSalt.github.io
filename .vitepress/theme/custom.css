@@ -20,6 +20,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -114,8 +115,7 @@ pre,
 kbd,
 samp {
   font-family: var(--vp-font-family-mono);
-  font-variant-ligatures: no-common-ligatures no-discretionary-ligatures
-    no-historical-ligatures no-contextual;
+  font-variant-ligatures: no-common-ligatures no-discretionary-ligatures no-historical-ligatures no-contextual;
   letter-spacing: normal;
 }
 
@@ -124,28 +124,27 @@ body {
   overflow-wrap: break-word;
   text-autospace: normal;
 
-  .vp-doc
-    :is(p, li, dd, blockquote, td, th):is(
-      :lang(zh-Hant),
-      :lang(ja-JP)
-    ) {
-    text-align: justify;
-    text-spacing-trim: trim-start;
+  .vp-doc {
+    :is(:lang(zh-Hant), :lang(ja-JP)) {
+      :is(p, li, dd, blockquote, td, th) {
+        text-align: justify;
+        text-spacing-trim: trim-start;
+      }
+
+      :is(ul, ol) {
+        padding-inline-start: 2em;
+        margin-left: 0;
+      }
+
+      li {
+        list-style-position: outside;
+      }
+    }
   }
 }
 
 ruby {
   text-autospace: no-autospace;
-}
-
-.vp-doc ul,
-.vp-doc ol {
-  padding-left: 2em;
-  margin-left: 0;
-}
-
-.vp-doc li {
-  list-style-position: outside; 
 }
 
 .url {
@@ -257,8 +256,7 @@ select:focus {
 }
 
 .dark .transparent-image {
-  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.6))
-    drop-shadow(0 0 1px rgba(255, 255, 255, 0.8));
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 1px rgba(255, 255, 255, 0.8));
 }
 
 .footnote-ref a {
@@ -268,7 +266,8 @@ select:focus {
 .custom-footnote-tooltip {
   position: absolute;
   z-index: 9999;
-  box-sizing: content-box; /* 保留：用以覆蓋 VitePress 全局的 border-box */
+  box-sizing: content-box;
+  /* 保留：用以覆蓋 VitePress 全局的 border-box */
   max-width: 40ch;
   background: var(--vp-c-bg-elv);
   color: var(--vp-c-text-1);
@@ -284,7 +283,8 @@ select:focus {
 .custom-footnote-tooltip::after {
   content: "";
   position: absolute;
-  bottom: -8px; /* 精簡：替代原 inset，僅保留需要的偏移量 */
+  bottom: -8px;
+  /* 精簡：替代原 inset，僅保留需要的偏移量 */
   height: 8px;
 }
 

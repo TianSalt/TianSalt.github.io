@@ -29,7 +29,7 @@ export default defineConfig({
     ],
     ["meta", { "http-equiv": "X-UA-Compatible", content: "IE=edge" }],
     ["meta", { name: "robots", content: "index, follow" }],
-    ["link", { rel: "icon", href: "/favicon.ico" }],
+    ["link", { rel: "icon", href: "/icon.jpg" }],
     [
       "link",
       {

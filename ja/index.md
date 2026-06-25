@@ -4,7 +4,7 @@ layout: home
 hero:
   name: "塩語屋"
   text: "de Seclan"
-  tagline: <ruby>理　性<rt>ラティオーナリス</rt></ruby>・<ruby>温　和<rt>ミーティス</rt></ruby>・<ruby>可　憐<rt>アマービリス</rt></ruby>
+  tagline: <ruby>理性<rt>ラティオーナリス</rt></ruby>・<ruby>温和<rt>ミーティス</rt></ruby>・<ruby>可憐<rt>アマービリス</rt></ruby>
   actions:
     - theme: brand
       text: 読み始める

@@ -54,7 +54,8 @@ export default {
               text: '1. 規則',
               items: [
                 { text: '1.1 基本機制', link: '/zh-Hant/tutorials/riichi-mahjong/chapter-01/1' },
-                { text: '1.2 役、副露、局的進行', link: '/zh-Hant/tutorials/riichi-mahjong/chapter-01/2' }
+                { text: '1.2 役、副露、局的進行', link: '/zh-Hant/tutorials/riichi-mahjong/chapter-01/2' },
+                { text: '1.3 立直', link: '/zh-Hant/tutorials/riichi-mahjong/chapter-01/3' }
               ]
             }
 
