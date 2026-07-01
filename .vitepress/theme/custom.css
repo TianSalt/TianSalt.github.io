@@ -143,10 +143,6 @@ body {
   }
 }
 
-ruby {
-  text-autospace: no-autospace;
-}
-
 .url {
   word-break: break-all;
 }
