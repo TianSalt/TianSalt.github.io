@@ -83,7 +83,7 @@ defineProps({
 rt {
   font-size: 0.5em;
   color: var(--vp-c-text-1);
-  padding-block-end: 0.15em;
+  padding-block-end: 0.1em;
 }
 
 rt.is-english {

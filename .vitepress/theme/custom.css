@@ -303,7 +303,6 @@ select:focus {
 m-tehai {
   font-family: "I.Mahjong-JP", var(--vp-font-family-mono);
   font-size: 2.25em;
-  vertical-align: -0.2em;
   display: inline-block;
   line-height: 1;
 }
