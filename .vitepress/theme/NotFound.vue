@@ -18,7 +18,7 @@ const messages = {
 }
 
 const languages = [
-  { code: 'zh', label: '中文', path: '/zh-Hant/' },
+  { code: 'zh', label: '漢語', path: '/zh-Hant/' },
   { code: 'en', label: 'English', path: '/en/' },
   { code: 'ja', label: '日本語', path: '/ja/' }
 ]

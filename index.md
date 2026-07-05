@@ -33,7 +33,7 @@ onBeforeMount(() => {
     <h2>鹽語屋</h2>
     <p>Select your language:</p>
     <div class="language-buttons">
-      <a href="/zh-Hant/" class="lang-btn">中文</a>
+      <a href="/zh-Hant/" class="lang-btn">漢語</a>
       <a href="/en/" class="lang-btn">English</a>
       <a href="/ja/" class="lang-btn">日本語</a>
     </div>

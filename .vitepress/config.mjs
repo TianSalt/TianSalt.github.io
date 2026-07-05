@@ -77,7 +77,7 @@ export default defineConfig({
       ...enLocale,
     },
     "zh-Hant": {
-      label: "中文",
+      label: "漢語",
       lang: "zh-Hant",
       link: "/zh-Hant/",
       ...zhHantLocale,

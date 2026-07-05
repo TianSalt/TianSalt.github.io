@@ -2,7 +2,7 @@ export default {
   title: "鹽語屋",
   description: '理性・溫柔・可愛',
   lang: 'zh-Hant',
-  label: '中文',
+  label: '漢語',
   themeConfig: {
     nav: [
       { text: '首頁', link: '/zh-Hant/' },

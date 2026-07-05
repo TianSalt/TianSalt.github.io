@@ -7,7 +7,7 @@ const isOpen = ref(false)
 
 const languages = [
   { code: 'en-US', label: 'English', path: '/en/' },
-  { code: 'zh-Hant', label: '中文', path: '/zh-Hant/' },
+  { code: 'zh-Hant', label: '漢語', path: '/zh-Hant/' },
   { code: 'ja-JP', label: '日本語', path: '/ja/' }
 ]
 

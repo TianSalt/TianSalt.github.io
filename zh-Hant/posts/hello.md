@@ -24,20 +24,20 @@ title: 字體排印測試
 
 混合標點：
 這是「測試」，另一個（示例）。
-中文標點與英文Punctuation混用。
+漢語標點與英文Punctuation混用。
 
 ## 中英文混排
 
 測試中英文自動間距（無手動空格）：
 
-- 中文English中文：這是English測試
-- 中文123中文：版本2.0於2026年發布
-- English中文：VitePress博客
-- 中文English：個人Blog
-- 混合句子：This is中文test withEnglish混排
+- 漢語English漢語：這是English測試
+- 漢語123漢語：版本2.0於2026年發布
+- English漢語：VitePress博客
+- 漢語English：個人Blog
+- 混合句子：This is漢語test withEnglish混排
 
 長段落測試：
-這是一段包含English文字的中文段落，用來測試VitePress的字體排印效果。這裡有JavaScript代碼、Python腳本、以及各種123數字。排版應該自動處理中文和English之間的間距，不需要手動添加空格。
+這是一段包含English文字的漢語段落，用來測試VitePress的字體排印效果。這裡有JavaScript代碼、Python腳本、以及各種123數字。排版應該自動處理漢語和English之間的間距，不需要手動添加空格。
 
 ## 數字
 
