@@ -55,6 +55,7 @@ export default {
               items: [
                 { text: '1.1 Basic Mechanics', link: '/en/tutorials/riichi-mahjong/chapter-01/1' },
                 { text: '1.2 <i>Yaku</i>, Calls, and Rounds', link: '/en/tutorials/riichi-mahjong/chapter-01/2' },
+                { text: '1.3 <i>Rīchi</i>', link: '/en/tutorials/riichi-mahjong/chapter-01/3' }
               ]
             }
           ]
