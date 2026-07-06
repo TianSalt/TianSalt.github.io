@@ -129,6 +129,7 @@ body {
       :is(p, li, dd, blockquote, td, th) {
         text-align: justify;
         text-spacing-trim: trim-start;
+        line-break: strict;
       }
 
       :is(ul, ol) {
