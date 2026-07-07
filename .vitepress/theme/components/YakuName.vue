@@ -89,6 +89,7 @@ rt {
 rt.is-english {
   font-style: italic;
   font-size: 1rem;
-  font-family: "Merriweather", serif;
+  font-feature-settings: "ccmp" 0, "mark" 0;
+  font-family: "PT Serif", serif;
 }
 </style>
