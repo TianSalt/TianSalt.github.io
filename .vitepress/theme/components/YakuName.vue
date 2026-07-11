@@ -73,7 +73,7 @@ defineProps({
 }
 
 .yaku-text.is-english {
-  font-size: 0.9em;
+  font-size: 1rem;
 }
 
 .yaku-text ruby {
