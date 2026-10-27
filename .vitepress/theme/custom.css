@@ -127,9 +127,9 @@ body {
   .vp-doc {
     :is(:lang(zh-Hant), :lang(ja-JP)) {
       :is(p, li, dd, blockquote, td, th) {
-        text-align: justify;
         text-spacing-trim: trim-start;
         line-break: strict;
+        hanging-punctuation: allow-end;
       }
 
       :is(ul, ol) {
