@@ -20,7 +20,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-
   *,
   *::before,
   *::after {
@@ -96,18 +95,24 @@
   --vp-font-family-base:
     "IBM Plex Sans", "IBM Plex Sans JP", "IBM Plex Sans TC", sans-serif;
   --vp-font-family-mono:
-    "0xProto", "IBM Plex Sans", "IBM Plex Sans TC", "IBM Plex Sans JP",
-    sans-serif;
+    "0xProto", "IBM Plex Sans", "IBM Plex Sans JP", "IBM Plex Sans TC",
+    monospace;
 }
 
 :lang(zh-Hant) {
   --vp-font-family-base:
     "IBM Plex Sans", "IBM Plex Sans TC", "IBM Plex Sans JP", sans-serif;
+  --vp-font-family-mono:
+    "0xProto", "IBM Plex Sans", "IBM Plex Sans TC", "IBM Plex Sans JP",
+    monospace;
 }
 
 :lang(ja-JP) {
   --vp-font-family-base:
-    "IBM Plex Sans", "IBM Plex Sans JP", "BIZ UDPGothic", sans-serif;
+    "IBM Plex Sans", "IBM Plex Sans JP", "IBM Plex Sans TC", sans-serif;
+  --vp-font-family-mono:
+    "0xProto", "IBM Plex Sans", "IBM Plex Sans JP", "IBM Plex Sans TC",
+    monospace;
 }
 
 code,
@@ -115,7 +120,8 @@ pre,
 kbd,
 samp {
   font-family: var(--vp-font-family-mono);
-  font-variant-ligatures: no-common-ligatures no-discretionary-ligatures no-historical-ligatures no-contextual;
+  font-variant-ligatures: no-common-ligatures no-discretionary-ligatures
+    no-historical-ligatures no-contextual;
   letter-spacing: normal;
 }
 
@@ -149,7 +155,8 @@ body {
 }
 
 l-ja {
-  font-family: "IBM Plex Sans", "IBM Plex Sans JP", "BIZ UDGothic", sans-serif;
+  font-family:
+    "IBM Plex Sans", "IBM Plex Sans JP", "IBM Plex Sans TC", sans-serif;
 }
 
 /* Image accessibility */
@@ -253,7 +260,8 @@ select:focus {
 }
 
 .dark .transparent-image {
-  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 1px rgba(255, 255, 255, 0.8));
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.6))
+    drop-shadow(0 0 1px rgba(255, 255, 255, 0.8));
 }
 
 .footnote-ref a {
