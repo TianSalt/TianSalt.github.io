@@ -90,6 +90,25 @@
   font-display: swap;
 }
 
+/* Chinese punctuation routed to IBM Plex Sans JP (subsetted) */
+@font-face {
+  font-family: "Plex JP Punct";
+  src: url("/fonts/plex-jp-punct-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+3000-3002, U+FF0C;
+}
+
+@font-face {
+  font-family: "Plex JP Punct";
+  src: url("/fonts/plex-jp-punct-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+3000-3002, U+FF0C;
+}
+
 /* Font settings - auto-switch based on language */
 :root {
   --vp-font-family-base:
@@ -101,10 +120,11 @@
 
 :lang(zh-Hant) {
   --vp-font-family-base:
-    "IBM Plex Sans", "IBM Plex Sans TC", "IBM Plex Sans JP", sans-serif;
+    "Plex JP Punct", "IBM Plex Sans", "IBM Plex Sans TC", "IBM Plex Sans JP",
+    sans-serif;
   --vp-font-family-mono:
-    "0xProto", "IBM Plex Sans", "IBM Plex Sans TC", "IBM Plex Sans JP",
-    monospace;
+    "Plex JP Punct", "0xProto", "IBM Plex Sans", "IBM Plex Sans TC",
+    "IBM Plex Sans JP", monospace;
 }
 
 :lang(ja-JP) {
