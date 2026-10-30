@@ -60,8 +60,6 @@
 @font-face {
   font-family: "0xProto";
   src: url("/fonts/0xProto-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
   font-display: swap;
 }
 
@@ -69,14 +67,12 @@
   font-family: "0xProto";
   src: url("/fonts/0xProto-Bold.woff2") format("woff2");
   font-weight: 700;
-  font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: "0xProto";
   src: url("/fonts/0xProto-Italic.woff2") format("woff2");
-  font-weight: 400;
   font-style: italic;
   font-display: swap;
 }
@@ -85,8 +81,6 @@
 @font-face {
   font-family: "I.Mahjong-JP";
   src: url("/fonts/I.MahjongJP.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
   font-display: swap;
 }
 
@@ -94,8 +88,6 @@
 @font-face {
   font-family: "Plex JP Punct";
   src: url("/fonts/plex-jp-punct-400.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
   font-display: swap;
   unicode-range: U+3000-3002, U+FF0C;
 }
@@ -104,7 +96,6 @@
   font-family: "Plex JP Punct";
   src: url("/fonts/plex-jp-punct-700.woff2") format("woff2");
   font-weight: 700;
-  font-style: normal;
   font-display: swap;
   unicode-range: U+3000-3002, U+FF0C;
 }
@@ -127,28 +118,16 @@
     "IBM Plex Sans JP", monospace;
 }
 
-:lang(ja-JP) {
-  --vp-font-family-base:
-    "IBM Plex Sans", "IBM Plex Sans JP", "IBM Plex Sans TC", sans-serif;
-  --vp-font-family-mono:
-    "0xProto", "IBM Plex Sans", "IBM Plex Sans JP", "IBM Plex Sans TC",
-    monospace;
-}
-
 code,
 pre,
 kbd,
 samp {
-  font-family: var(--vp-font-family-mono);
   font-variant-ligatures: no-common-ligatures no-discretionary-ligatures
     no-historical-ligatures no-contextual;
-  letter-spacing: normal;
 }
 
 body {
-  font-family: var(--vp-font-family-base);
   overflow-wrap: break-word;
-  text-autospace: normal;
 
   .vp-doc {
     :is(:lang(zh-Hant), :lang(ja-JP)) {
@@ -160,11 +139,6 @@ body {
 
       :is(ul, ol) {
         padding-inline-start: 2em;
-        margin-left: 0;
-      }
-
-      li {
-        list-style-position: outside;
       }
     }
   }
@@ -187,7 +161,6 @@ img {
 
 /* Table accessibility - using logical properties */
 table {
-  border-collapse: collapse;
   width: max-content;
   max-width: 100%;
 }
@@ -196,12 +169,6 @@ th,
 td {
   border: 1px solid var(--vp-c-border);
   padding: 0.75rem;
-  text-align: start;
-}
-
-th {
-  background-color: var(--vp-c-bg-soft);
-  font-weight: 600;
 }
 
 /* Form element accessibility - using logical properties */
@@ -292,7 +259,6 @@ select:focus {
   position: absolute;
   z-index: 9999;
   box-sizing: content-box;
-  /* 保留：用以覆蓋 VitePress 全局的 border-box */
   max-width: 40ch;
   background: var(--vp-c-bg-elv);
   color: var(--vp-c-text-1);
@@ -309,7 +275,6 @@ select:focus {
   content: "";
   position: absolute;
   bottom: -8px;
-  /* 精簡：替代原 inset，僅保留需要的偏移量 */
   height: 8px;
 }
 
@@ -364,11 +329,41 @@ n-w {
 }
 
 .math-title {
-  margin: 0 0 0.3rem 0 !important;
+  margin: 0 0 0.65rem 0 !important;
   font-weight: 700;
-  color: var(--vp-c-text-1);
 }
 
 .math-content {
   line-height: 1.6;
+}
+
+/*
+ * VitePress gives block paragraphs a vertical margin, so the first and last
+ * element inside a box push extra space against the container's padding while
+ * the opposite edge stays at a single 0.5rem — making the block look top-heavy.
+ * Neutralize the leading/trailing margins so the inner spacing is symmetric.
+ */
+.math-content > :first-child {
+  margin-top: 0;
+}
+
+.math-content > :last-child {
+  margin-bottom: 0;
+}
+
+/* MathJax injects block formulas as direct children with an inline `margin: 1em 0`,
+   which the rules above cannot beat without !important. */
+.math-content > mjx-container[display="true"] {
+  margin-top: 0.2rem !important;
+  margin-bottom: 0.2rem !important;
+}
+
+.math-content > :first-child mjx-container[display="true"],
+.math-content > mjx-container[display="true"]:first-child {
+  margin-top: 0 !important;
+}
+
+.math-content > :last-child mjx-container[display="true"],
+.math-content > mjx-container[display="true"]:last-child {
+  margin-bottom: 0 !important;
 }

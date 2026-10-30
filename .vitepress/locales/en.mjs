@@ -59,6 +59,21 @@ export default {
               ]
             }
           ]
+        },
+        {
+          text: 'Cryptography',
+          collapsed: false,
+          items: [
+            { text: 'Introduction', link: '/en/tutorials/cryptography/' },
+            {
+              text: '1. Introduction',
+              items: [
+                { text: '1.1 Cryptography in a Nutshell', link: '/en/tutorials/cryptography/chapter-01/1' },
+                { text: '1.2 A Brief History of Ciphers', link: '/en/tutorials/cryptography/chapter-01/2' },
+                { text: '1.3 A Discrete Probability Toolbox', link: '/en/tutorials/cryptography/chapter-01/3' }
+              ]
+            }
+          ]
         }
       ]
     },
