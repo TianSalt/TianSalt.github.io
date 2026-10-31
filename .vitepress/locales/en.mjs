@@ -1,106 +1,121 @@
 export default {
   title: "Yányǔwū",
-  description: 'Rationalis, Mitis, Amabilis',
-  lang: 'en-US',
-  label: 'English',
+  description: "Rationalis, Mitis, Amabilis",
+  lang: "en-US",
+  label: "English",
   themeConfig: {
     nav: [
-      { text: 'Home', link: '/en/' },
-      { text: 'Notes', link: '/en/notes/' },
-      { text: 'Journal', link: '/en/posts/hello' },
-      { text: 'Articles', link: '/en/articles/' },
-      { text: 'Tutorials', link: '/en/tutorials/' },
-      { text: 'Guide', link: '/en/accessibility' }
+      { text: "Home", link: "/en/" },
+      { text: "Notes", link: "/en/notes/" },
+      { text: "Journal", link: "/en/posts/hello" },
+      { text: "Articles", link: "/en/articles/" },
+      { text: "Tutorials", link: "/en/tutorials/" },
+      { text: "Guide", link: "/en/accessibility" },
     ],
     sidebar: {
-      '/en/notes/': [
+      "/en/notes/": [
         {
-          text: 'Notes',
-          items: [
-            { text: 'Notes Home', link: '/en/notes/' }
-          ]
-        }
+          text: "Notes",
+          items: [{ text: "Notes Home", link: "/en/notes/" }],
+        },
       ],
-      '/en/posts/': [
+      "/en/posts/": [
         {
-          text: 'Journal',
-          items: [
-            { text: 'Hello, World!', link: '/en/posts/hello' }
-          ]
-        }
+          text: "Journal",
+          items: [{ text: "Hello, World!", link: "/en/posts/hello" }],
+        },
       ],
-      '/en/articles/': [
+      "/en/articles/": [
         {
-          text: 'Articles',
+          text: "Articles",
           items: [
-            { text: 'Articles Home', link: '/en/articles/' },
-            { text: 'Getting Started with VitePress', link: '/en/articles/getting-started-with-vitepress' }
-          ]
-        }
+            { text: "Articles Home", link: "/en/articles/" },
+            {
+              text: "Getting Started with VitePress",
+              link: "/en/articles/getting-started-with-vitepress",
+            },
+          ],
+        },
       ],
-      '/en/tutorials/': [
+      "/en/tutorials/": [
         {
-          text: 'Tutorials',
-          items: [
-            { text: 'Tutorials Home', link: '/en/tutorials/' }
-          ]
+          text: "Tutorials",
+          items: [{ text: "Tutorials Home", link: "/en/tutorials/" }],
         },
         {
-          text: '<i>Rīchi</i> Mahjong',
-          collapsed: false,
+          text: "<i>Rīchi</i> Mahjong",
+          collapsed: true,
           items: [
-            { text: 'Introduction', link: '/en/tutorials/riichi-mahjong/' },
+            { text: "Introduction", link: "/en/tutorials/riichi-mahjong/" },
             {
-              text: '1. Rules',
+              text: "1. Rules",
               items: [
-                { text: '1.1 Basic Mechanics', link: '/en/tutorials/riichi-mahjong/chapter-01/1' },
-                { text: '1.2 <i>Yaku</i>, Calls, and Rounds', link: '/en/tutorials/riichi-mahjong/chapter-01/2' },
-                { text: '1.3 <i>Rīchi</i>', link: '/en/tutorials/riichi-mahjong/chapter-01/3' }
-              ]
-            }
-          ]
+                {
+                  text: "1.1 Basic Mechanics",
+                  link: "/en/tutorials/riichi-mahjong/chapter-01/1",
+                },
+                {
+                  text: "1.2 <i>Yaku</i>, Calls, and Rounds",
+                  link: "/en/tutorials/riichi-mahjong/chapter-01/2",
+                },
+                {
+                  text: "1.3 <i>Rīchi</i>",
+                  link: "/en/tutorials/riichi-mahjong/chapter-01/3",
+                },
+              ],
+            },
+          ],
         },
         {
-          text: 'Cryptography',
-          collapsed: false,
+          text: "Cryptography",
+          collapsed: true,
           items: [
-            { text: 'Introduction', link: '/en/tutorials/cryptography/' },
+            { text: "Introduction", link: "/en/tutorials/cryptography/" },
             {
-              text: '1. Introduction',
+              text: "1. Introduction",
               items: [
-                { text: '1.1 Cryptography in a Nutshell', link: '/en/tutorials/cryptography/chapter-01/1' },
-                { text: '1.2 A Brief History of Ciphers', link: '/en/tutorials/cryptography/chapter-01/2' },
-                { text: '1.3 A Discrete Probability Toolbox', link: '/en/tutorials/cryptography/chapter-01/3' }
-              ]
-            }
-          ]
-        }
-      ]
+                {
+                  text: "1.1 Cryptography in a Nutshell",
+                  link: "/en/tutorials/cryptography/chapter-01/1",
+                },
+                {
+                  text: "1.2 A Brief History of Ciphers",
+                  link: "/en/tutorials/cryptography/chapter-01/2",
+                },
+                {
+                  text: "1.3 A Discrete Probability Toolbox",
+                  link: "/en/tutorials/cryptography/chapter-01/3",
+                },
+              ],
+            },
+          ],
+        },
+      ],
     },
     editLink: {
-      text: 'Edit this page on GitHub',
-      pattern: 'https://github.com/TianSalt/TianSalt.github.io/edit/main/:path'
+      text: "Edit this page on GitHub",
+      pattern: "https://github.com/TianSalt/TianSalt.github.io/edit/main/:path",
     },
     lastUpdated: {
-      text: 'Last updated',
+      text: "Last updated",
       formatOptions: {
-        dateStyle: 'medium',
-        timeStyle: 'short'
-      }
+        dateStyle: "medium",
+        timeStyle: "short",
+      },
     },
     docFooter: {
-      prev: 'Previous',
-      next: 'Next'
+      prev: "Previous",
+      next: "Next",
     },
     outline: {
-      label: 'On this page'
+      label: "On this page",
     },
-    returnToTopLabel: 'Return to top',
-    sidebarMenuLabel: 'Menu',
-    darkModeSwitchLabel: 'Theme',
-    lightModeSwitchTitle: 'Switch to light theme',
-    darkModeSwitchTitle: 'Switch to dark theme',
-    skipToContentLabel: 'Skip to main content',
-    langMenuLabel: 'Change language'
-  }
-}
+    returnToTopLabel: "Return to top",
+    sidebarMenuLabel: "Menu",
+    darkModeSwitchLabel: "Theme",
+    lightModeSwitchTitle: "Switch to light theme",
+    darkModeSwitchTitle: "Switch to dark theme",
+    skipToContentLabel: "Skip to main content",
+    langMenuLabel: "Change language",
+  },
+};

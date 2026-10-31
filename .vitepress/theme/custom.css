@@ -102,6 +102,7 @@
 
 /* Font settings - auto-switch based on language */
 :root {
+  --vp-doc-line-height: 28px;
   --vp-font-family-base:
     "IBM Plex Sans", "IBM Plex Sans JP", "IBM Plex Sans TC", sans-serif;
   --vp-font-family-mono:
@@ -128,6 +129,7 @@ samp {
 
 body {
   overflow-wrap: break-word;
+  text-autospace: normal;
 
   .vp-doc {
     :is(:lang(zh-Hant), :lang(ja-JP)) {
@@ -142,6 +144,12 @@ body {
       }
     }
   }
+}
+
+/* Keep paragraphs and lists on the same leading; tune via --vp-doc-line-height. */
+.vp-doc p,
+.vp-doc li {
+  line-height: var(--vp-doc-line-height);
 }
 
 .url {
@@ -320,6 +328,19 @@ n-w {
   color: var(--vp-c-brand-1);
 }
 
+/*
+ * VitePress's base.css sets `overflow-x: auto` on MathJax containers. Per CSS
+ * rules, `visible` on the other axis is then computed as `auto`, so even tiny
+ * vertical overflow (such as from auxiliary MathML, SVG line boxes, or
+ * subpixel rounding) can cause a vertical scrollbar to appear on the right.
+ * Preserve horizontal scrolling for wide equations, but never show a vertical
+ * scrollbar.
+ */
+mjx-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
 .math-container {
   margin: 1.2rem 0;
   padding: 0.5rem 0.8rem;
@@ -366,4 +387,12 @@ n-w {
 .math-content > :last-child mjx-container[display="true"],
 .math-content > mjx-container[display="true"]:last-child {
   margin-bottom: 0 !important;
+}
+
+/* Vector figures are drawn on a light card. In dark mode, invert luminance
+   while rotating hue back, so the diagram follows the theme without a second
+   asset. Raster photographs keep their original colours. */
+.dark .adaptive-image,
+.dark .medium-zoom-image[src$=".svg"] {
+  filter: invert(1) hue-rotate(180deg);
 }

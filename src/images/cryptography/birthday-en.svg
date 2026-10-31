@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 400" width="960" height="400" role="img" aria-labelledby="t d" font-family="'IBM Plex Sans', sans-serif">
+  <title id="t">Birthday collision curve</title>
+  <desc id="d">Collision probability against the number of samples for a space of size one million. The curve crosses one half at about 1200 samples.</desc>
+  <defs>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrowRed" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#dc2626"/>
+    </marker>
+    <marker id="arrowAmber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#d97706"/>
+    </marker>
+    <marker id="arrowGray" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#64748b"/>
+    </marker>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#059669"/>
+    </marker>
+  </defs>
+  <rect width="960" height="400" rx="18" fill="#f8fafc"/>
+  <rect x="0.75" y="0.75" width="958.5" height="398.5" rx="17.25" fill="none" stroke="#e2e8f0" stroke-width="1.5"/>
+  <line x1="100" y1="320.0" x2="880" y2="320.0" stroke="#e2e8f0" stroke-width="1.1"/>
+  <text x="88" y="325.0" font-size="13" fill="#94a3b8" text-anchor="end" font-weight="400">0</text>
+  <line x1="100" y1="253.75" x2="880" y2="253.75" stroke="#e2e8f0" stroke-width="1.1"/>
+  <text x="88" y="258.75" font-size="13" fill="#94a3b8" text-anchor="end" font-weight="400">0.25</text>
+  <line x1="100" y1="187.5" x2="880" y2="187.5" stroke="#e2e8f0" stroke-width="1.1"/>
+  <text x="88" y="192.5" font-size="13" fill="#94a3b8" text-anchor="end" font-weight="400">0.5</text>
+  <line x1="100" y1="121.25" x2="880" y2="121.25" stroke="#e2e8f0" stroke-width="1.1"/>
+  <text x="88" y="126.25" font-size="13" fill="#94a3b8" text-anchor="end" font-weight="400">0.75</text>
+  <line x1="100" y1="55.0" x2="880" y2="55.0" stroke="#e2e8f0" stroke-width="1.1"/>
+  <text x="88" y="60.0" font-size="13" fill="#94a3b8" text-anchor="end" font-weight="400">1</text>
+  <line x1="100.0" y1="55" x2="100.0" y2="320" stroke="#e2e8f0" stroke-width="1.1"/>
+  <text x="100.0" y="344" font-size="13" fill="#94a3b8" text-anchor="middle" font-weight="400">0</text>
+  <line x1="360.0" y1="55" x2="360.0" y2="320" stroke="#e2e8f0" stroke-width="1.1"/>
+  <text x="360.0" y="344" font-size="13" fill="#94a3b8" text-anchor="middle" font-weight="400">1000</text>
+  <line x1="620.0" y1="55" x2="620.0" y2="320" stroke="#e2e8f0" stroke-width="1.1"/>
+  <text x="620.0" y="344" font-size="13" fill="#94a3b8" text-anchor="middle" font-weight="400">2000</text>
+  <line x1="880.0" y1="55" x2="880.0" y2="320" stroke="#e2e8f0" stroke-width="1.1"/>
+  <text x="880.0" y="344" font-size="13" fill="#94a3b8" text-anchor="middle" font-weight="400">3000</text>
+  <text x="100" y="37" font-size="14" fill="#475569" text-anchor="start" font-weight="600">collision probability</text>
+  <text x="490.0" y="380" font-size="14" fill="#475569" text-anchor="middle" font-weight="600">samples  n</text>
+  <text x="880" y="37" font-size="14" fill="#475569" text-anchor="end" font-weight="600">p ≈ 1 − e^(−n² / 2|U|)</text>
+  <polyline points="100.00,320.00 105.20,319.95 110.40,319.79 115.60,319.52 120.80,319.15 126.00,318.68 131.20,318.10 136.40,317.42 141.60,316.63 146.80,315.74 152.00,314.75 157.20,313.66 162.40,312.48 167.60,311.19 172.80,309.81 178.00,308.34 183.20,306.77 188.40,305.12 193.60,303.37 198.80,301.54 204.00,299.63 209.20,297.63 214.40,295.55 219.60,293.40 224.80,291.16 230.00,288.86 235.20,286.49 240.40,284.05 245.60,281.54 250.80,278.97 256.00,276.35 261.20,273.66 266.40,270.92 271.60,268.14 276.80,265.30 282.00,262.42 287.20,259.49 292.40,256.53 297.60,253.53 302.80,250.49 308.00,247.43 313.20,244.34 318.40,241.22 323.60,238.08 328.80,234.92 334.00,231.75 339.20,228.56 344.40,225.36 349.60,222.16 354.80,218.94 360.00,215.73 365.20,212.52 370.40,209.30 375.60,206.10 380.80,202.90 386.00,199.71 391.20,196.53 396.40,193.37 401.60,190.22 406.80,187.10 412.00,183.99 417.20,180.91 422.40,177.85 427.60,174.81 432.80,171.81 438.00,168.83 443.20,165.89 448.40,162.98 453.60,160.10 458.80,157.26 464.00,154.46 469.20,151.69 474.40,148.97 479.60,146.28 484.80,143.64 490.00,141.03 495.20,138.47 500.40,135.96 505.60,133.49 510.80,131.06 516.00,128.68 521.20,126.35 526.40,124.06 531.60,121.82 536.80,119.62 542.00,117.47 547.20,115.37 552.40,113.32 557.60,111.31 562.80,109.35 568.00,107.44 573.20,105.58 578.40,103.76 583.60,101.99 588.80,100.26 594.00,98.59 599.20,96.95 604.40,95.36 609.60,93.82 614.80,92.32 620.00,90.86 625.20,89.45 630.40,88.08 635.60,86.75 640.80,85.46 646.00,84.22 651.20,83.01 656.40,81.84 661.60,80.71 666.80,79.62 672.00,78.56 677.20,77.55 682.40,76.56 687.60,75.61 692.80,74.70 698.00,73.82 703.20,72.97 708.40,72.15 713.60,71.36 718.80,70.60 724.00,69.88 729.20,69.18 734.40,68.50 739.60,67.86 744.80,67.24 750.00,66.64 755.20,66.07 760.40,65.53 765.60,65.00 770.80,64.50 776.00,64.02 781.20,63.56 786.40,63.12 791.60,62.71 796.80,62.30 802.00,61.92 807.20,61.56 812.40,61.21 817.60,60.88 822.80,60.56 828.00,60.26 833.20,59.97 838.40,59.70 843.60,59.44 848.80,59.19 854.00,58.95 859.20,58.73 864.40,58.52 869.60,58.32 874.80,58.13 880.00,57.94" fill="none" stroke="#2563eb" stroke-width="3"/>
+  <line x1="100" y1="183.9893478293925" x2="412.0" y2="183.9893478293925" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="6 6"/>
+  <line x1="412.0" y1="320" x2="412.0" y2="183.9893478293925" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="6 6"/>
+  <circle cx="412.0" cy="183.9893478293925" r="6" fill="#dc2626" stroke="none" stroke-width="2"/>
+  <text x="426.0" y="171.9893478293925" font-size="15" fill="#dc2626" text-anchor="start" font-weight="600">n = 1200,  p ≈ 0.51</text>
+</svg>
