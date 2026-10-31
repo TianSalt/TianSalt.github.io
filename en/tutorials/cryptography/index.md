@@ -1,7 +1,7 @@
 ---
-title: Cryptography
+title: Preface
 ---
-# Cryptography
+# Preface
 
 This series is a self-contained introduction to modern cryptography, developed from Dan Boneh’s *Cryptography I* course (Stanford / Coursera). It is written at a textbook level: every primitive is introduced through the problem it solves, stated as a precise definition, and motivated by concrete attacks.
 

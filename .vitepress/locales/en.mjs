@@ -49,6 +49,7 @@ export default {
             { text: "Introduction", link: "/en/tutorials/riichi-mahjong/" },
             {
               text: "1. Rules",
+              collapsed: true,
               items: [
                 {
                   text: "1.1 Basic Mechanics",
@@ -70,9 +71,10 @@ export default {
           text: "Cryptography",
           collapsed: true,
           items: [
-            { text: "Introduction", link: "/en/tutorials/cryptography/" },
+            { text: "Preface", link: "/en/tutorials/cryptography/" },
             {
               text: "1. Introduction",
+              collapsed: true,
               items: [
                 {
                   text: "1.1 Cryptography in a Nutshell",
@@ -85,6 +87,16 @@ export default {
                 {
                   text: "1.3 A Discrete Probability Toolbox",
                   link: "/en/tutorials/cryptography/chapter-01/3",
+                },
+              ],
+            },
+            {
+              text: "2. Perfect Secrecy and Stream Ciphers",
+              collapsed: true,
+              items: [
+                {
+                  text: "2.1 Perfect Secrecy and the One-Time Pad",
+                  link: "/en/tutorials/cryptography/chapter-02/1",
                 },
               ],
             },

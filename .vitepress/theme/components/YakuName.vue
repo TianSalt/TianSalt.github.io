@@ -41,9 +41,11 @@ defineProps({
   /* 💡 Increased from 0.05em to 0.12em for a more substantial typographic weight */
   block-size: 0.12em;
 
-  background: linear-gradient(to right,
-      rgba(161, 161, 161, 0.15),
-      rgba(161, 161, 161, 0.85));
+  background: linear-gradient(
+    to right,
+    rgba(161, 161, 161, 0.15),
+    rgba(161, 161, 161, 0.85)
+  );
 
   /* A microscopic radius to take away the raw digital harshness while keeping it crisp */
   border-radius: 0.04em;
@@ -68,8 +70,8 @@ defineProps({
   font-weight: 700;
   color: var(--vp-c-text-1);
   font-family:
-    "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Yu Mincho", "YuMincho",
-    "BIZ UDPMincho", "BIZ PMincho", "MS PMincho", "MS Mincho", serif;
+    "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Yu Mincho Demibold",
+    "Yu Mincho", "Source Han Serif JP", "Noto Serif JP", serif;
 }
 
 .yaku-text.is-english {
@@ -87,9 +89,9 @@ rt {
 }
 
 rt.is-english {
-  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
   font-size: 1rem;
-  font-feature-settings: "ccmp" 0, "mark" 0;
   font-family: "PT Serif", serif;
 }
 </style>

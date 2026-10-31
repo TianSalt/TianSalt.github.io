@@ -49,6 +49,7 @@ export default {
             { text: "序", link: "/ja/tutorials/riichi-mahjong/" },
             {
               text: "1. ルール",
+              collapsed: true,
               items: [
                 {
                   text: "1.1 基本メカニズム",

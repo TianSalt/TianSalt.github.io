@@ -49,6 +49,7 @@ export default {
             { text: "序", link: "/zh-Hant/tutorials/riichi-mahjong/" },
             {
               text: "1. 規則",
+              collapsed: true,
               items: [
                 {
                   text: "1.1 基本機制",
