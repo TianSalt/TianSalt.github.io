@@ -18,6 +18,10 @@ function normalize(path) {
     .replace(INDEX_OR_EXT_RE, "$1");
 }
 
+function withLeadingSlash(path) {
+  return path.startsWith("/") ? path : `/${path}`;
+}
+
 function flattenLinks(items, links = []) {
   for (const item of items) {
     if (item.link) links.push(item.link);
@@ -26,31 +30,17 @@ function flattenLinks(items, links = []) {
   return links;
 }
 
-/**
- * Precompute a flattened list of links for each tutorial directory, so we can
- * quickly find the previous/next links for a given page.
- */
-const locales = localeSidebars
-  .map(([prefix, sidebar]) => ({
-    prefix,
-    dirs: Object.keys(sidebar).sort(
-      (a, b) => b.split("/").length - a.split("/").length,
-    ),
-    sidebars: sidebar,
-  }))
-  .map((entry) => ({ ...entry, cached: new Map() }));
-
-function linksFor(entry, relativePath) {
-  const dir = entry.dirs.find((d) => relativePath.startsWith(`/${d}`));
-  if (!dir) return [];
-  if (!entry.cached.has(dir)) {
-    entry.cached.set(dir, flattenLinks(entry.sidebars[dir]));
-  }
-  return entry.cached.get(dir);
+function findSidebar(sidebarConfig, relativePath) {
+  const path = withLeadingSlash(relativePath);
+  const dir = Object.keys(sidebarConfig)
+    .sort((a, b) => b.split("/").length - a.split("/").length)
+    .find((dir) => path.startsWith(withLeadingSlash(dir)));
+  return dir ? sidebarConfig[dir] : [];
 }
 
 function tutorialSlug(link) {
-  return link.match(TUTORIAL_RE)?.[1] ?? null;
+  const match = link.match(TUTORIAL_RE);
+  return match ? match[1] : null;
 }
 
 /**
@@ -60,20 +50,31 @@ function tutorialSlug(link) {
  * go to and from the tutorials index page.
  */
 export function keepPrevNextInsideTutorial(pageData) {
-  const relativePath = `/${pageData.relativePath}`;
-  const entry = locales.find((e) => relativePath.startsWith(e.prefix));
+  const relativePath = pageData.relativePath.replace(/\\/g, "/");
+  const entry = localeSidebars.find(([prefix]) =>
+    relativePath.startsWith(prefix),
+  );
   if (!entry) return;
 
-  const links = linksFor(entry, relativePath);
-  const current = normalize(relativePath);
+  const links = flattenLinks(findSidebar(entry[1], relativePath));
+  const current = normalize(withLeadingSlash(relativePath));
   const index = links.findIndex((link) => normalize(link) === current);
   if (index < 0) return;
 
   const slug = tutorialSlug(links[index]);
   if (!slug) return;
 
-  const prevSlug = tutorialSlug(links[index - 1]);
-  const nextSlug = tutorialSlug(links[index + 1]);
-  if (prevSlug && prevSlug !== slug) pageData.frontmatter.prev = false;
-  if (nextSlug && nextSlug !== slug) pageData.frontmatter.next = false;
+  pageData.frontmatter ??= {};
+
+  const prev = links[index - 1];
+  const next = links[index + 1];
+  const prevSlug = prev ? tutorialSlug(prev) : null;
+  const nextSlug = next ? tutorialSlug(next) : null;
+
+  if (prevSlug && prevSlug !== slug) {
+    pageData.frontmatter.prev = false;
+  }
+  if (nextSlug && nextSlug !== slug) {
+    pageData.frontmatter.next = false;
+  }
 }
