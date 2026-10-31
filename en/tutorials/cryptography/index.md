@@ -14,5 +14,5 @@ The series follows the three-step method that organizes the whole subject.
 We assume comfort with discrete mathematics and a little probability; where a tool is needed it is developed in place (for instance, the discrete-probability toolbox in Chapter 1). No prior exposure to cryptography is required.
 
 ::: warning About the sources
-This chapter was developed from the public materials of *Cryptography I* and cross-checked against Boneh and Shoup’s open textbook *A Graduate Course in Applied Cryptography*. Historical and numerical details were corrected where those materials garbled them (for example the name of Vigenère’s cipher or the size of the Enigma keyspace). Any remaining error is the author’s own.
+This chapter was developed from the public materials of *Cryptography I* and cross-checked against Boneh and Shoup’s open textbook *A Graduate Course in Applied Cryptography*. Historical and numerical details were corrected where those materials garbled them (for example the name of Vigenère’s cipher). Any remaining error is the author’s own.
 :::

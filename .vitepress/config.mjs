@@ -4,6 +4,7 @@ import enLocale from "./locales/en.mjs";
 import jaLocale from "./locales/ja.mjs";
 import footnote from "markdown-it-footnote";
 import container from "markdown-it-container";
+import { keepPrevNextInsideTutorial } from "./tutorial-prev-next.mjs";
 
 export default defineConfig({
   title: "鹽語屋",
@@ -189,6 +190,10 @@ export default defineConfig({
         }
       });
     },
+  },
+
+  transformPageData(pageData) {
+    keepPrevNextInsideTutorial(pageData);
   },
 
   lastUpdated: true,
