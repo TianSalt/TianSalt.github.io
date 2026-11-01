@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 960 420" width="960" height="420" role="img" aria-labelledby="t d" font-family="'IBM Plex Sans', sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 960 420" width="960" height="420" role="img" aria-labelledby="t d">
   <title id="t">A random variable partitions the sample space into fibers</title>
   <desc id="d">Four two-bit strings are stacked in two pairs by their least significant bit. Arrows from 00 and 10 meet at the value 0; arrows from 01 and 11 meet at the value 1.</desc>
   <defs>
