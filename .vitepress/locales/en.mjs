@@ -98,6 +98,10 @@ export default {
                   text: "2.1 Perfect Secrecy and the One-Time Pad",
                   link: "/en/tutorials/cryptography/chapter-02/1",
                 },
+                {
+                  text: "2.2 Stream Ciphers and Pseudorandom Generators",
+                  link: "/en/tutorials/cryptography/chapter-02/2",
+                },
               ],
             },
           ],
