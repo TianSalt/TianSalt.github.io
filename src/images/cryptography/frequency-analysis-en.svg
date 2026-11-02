@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 390" width="960" height="390" role="img" aria-labelledby="t d">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 390" width="960" height="390" font-family="sans-serif" role="img" aria-labelledby="t d">
   <title id="t">Letter frequencies in English</title>
   <desc id="d">Bar chart of the ten most frequent English letters. E is tallest at about 12.7 percent; T and A follow.</desc>
   <defs>

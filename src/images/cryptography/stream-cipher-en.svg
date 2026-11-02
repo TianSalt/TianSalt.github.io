@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 214" width="960" height="214" role="img" aria-labelledby="t d">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 214" width="960" height="214" font-family="sans-serif" role="img" aria-labelledby="t d">
   <title id="t">A stream cipher stretches a short key into a pad as long as the message</title>
   <desc id="d">A short key k of s bits enters the public deterministic generator G, whose output is an n-bit pseudorandom pad. The pad is XORed with the n-bit message to produce the ciphertext. The key is drawn short and the pad long, showing how a small secret covers a long message.</desc>
   <defs>
