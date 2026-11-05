@@ -16,7 +16,7 @@ export default defineConfig({
     template: {
       compilerOptions: {
         isCustomElement: (tag) => {
-          return ["m-tehai", "m-pai", "l-ja", "n-w", "m-p"].includes(tag);
+          return ["m-tehai", "m-pai", "l-ja", "m-p"].includes(tag);
         },
       },
     },

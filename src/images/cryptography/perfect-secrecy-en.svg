@@ -1,21 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 960 440" width="960" height="440" font-family="sans-serif" role="img" aria-labelledby="t d">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 960 440" width="960" height="440" font-family="'Segoe UI', 'Segoe UI Symbol', Roboto, 'Helvetica Neue', Arial, 'DejaVu Sans', sans-serif" role="img" aria-labelledby="t d">
   <title id="t">Perfect secrecy compares two ciphertext distributions</title>
   <desc id="d">Left: under the one-time pad every ciphertext has probability one quarter whether the message is m0 or m1, so the two distributions coincide. Right: under a leaky cipher the tall bars sit on different ciphertexts for the two messages, so the ciphertext reveals which message was sent.</desc>
   <rect width="960" height="440" rx="18" fill="#f8fafc"/>
   <rect x="0.75" y="0.75" width="958.5" height="438.5" rx="17.25" fill="none" stroke="#e2e8f0" stroke-width="1.5"/>
 
-  <rect x="28" y="48" width="440" height="324" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
-  <rect x="492" y="48" width="440" height="324" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+  <rect x="20" y="48" width="456" height="324" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+  <rect x="484" y="48" width="456" height="324" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
 
-  <text x="52" y="82" font-size="16" font-weight="700" fill="#0f172a">One-time pad: identical for every message</text>
-  <text x="516" y="82" font-size="16" font-weight="700" fill="#0f172a">A leaky cipher: the two distributions differ</text>
+  <text x="44" y="82" font-size="19" font-weight="700" fill="#0f172a">One-time pad: identical for every message</text>
+  <text x="508" y="82" font-size="19" font-weight="700" fill="#0f172a">A leaky cipher: the two distributions differ</text>
 
-  <text x="92" y="154" font-size="12" fill="#64748b" text-anchor="end">1/2</text>
-  <text x="92" y="229" font-size="12" fill="#64748b" text-anchor="end">1/4</text>
-  <text x="92" y="304" font-size="12" fill="#64748b" text-anchor="end">0</text>
-  <text x="556" y="154" font-size="12" fill="#64748b" text-anchor="end">1/2</text>
-  <text x="556" y="229" font-size="12" fill="#64748b" text-anchor="end">1/4</text>
-  <text x="556" y="304" font-size="12" fill="#64748b" text-anchor="end">0</text>
+  <text x="92" y="154" font-size="15" fill="#64748b" text-anchor="end">1/2</text>
+  <text x="92" y="229" font-size="15" fill="#64748b" text-anchor="end">1/4</text>
+  <text x="92" y="304" font-size="15" fill="#64748b" text-anchor="end">0</text>
+  <text x="556" y="154" font-size="15" fill="#64748b" text-anchor="end">1/2</text>
+  <text x="556" y="229" font-size="15" fill="#64748b" text-anchor="end">1/4</text>
+  <text x="556" y="304" font-size="15" fill="#64748b" text-anchor="end">0</text>
 
   <line x1="100" y1="150" x2="452" y2="150" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="4 4"/>
   <line x1="100" y1="225" x2="452" y2="225" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="4 4"/>
@@ -32,10 +32,10 @@
   <rect x="307" y="225" width="20" height="75" rx="2" fill="#d97706" fill-opacity="0.9"/>
   <rect x="363" y="225" width="20" height="75" rx="2" fill="#2563eb" fill-opacity="0.85"/>
   <rect x="387" y="225" width="20" height="75" rx="2" fill="#d97706" fill-opacity="0.9"/>
-  <text x="145" y="213" font-size="13" fill="#475569" text-anchor="middle">1/4</text>
-  <text x="225" y="213" font-size="13" fill="#475569" text-anchor="middle">1/4</text>
-  <text x="305" y="213" font-size="13" fill="#475569" text-anchor="middle">1/4</text>
-  <text x="385" y="213" font-size="13" fill="#475569" text-anchor="middle">1/4</text>
+  <text x="145" y="213" font-size="16.25" fill="#475569" text-anchor="middle">1/4</text>
+  <text x="225" y="213" font-size="16.25" fill="#475569" text-anchor="middle">1/4</text>
+  <text x="305" y="213" font-size="16.25" fill="#475569" text-anchor="middle">1/4</text>
+  <text x="385" y="213" font-size="16.25" fill="#475569" text-anchor="middle">1/4</text>
 
   <rect x="598" y="150" width="20" height="150" rx="2" fill="#2563eb" fill-opacity="0.85"/>
   <rect x="622" y="297" width="20" height="3" fill="#d97706" fill-opacity="0.9"/>
@@ -46,24 +46,24 @@
   <rect x="838" y="297" width="20" height="3" fill="#2563eb" fill-opacity="0.85"/>
   <rect x="862" y="150" width="20" height="150" rx="2" fill="#d97706" fill-opacity="0.9"/>
 
-  <text x="608" y="140" font-size="13" fill="#475569" text-anchor="middle">1/2</text>
-  <text x="632" y="290" font-size="13" fill="#475569" text-anchor="middle">0</text>
-  <text x="700" y="213" font-size="13" fill="#475569" text-anchor="middle">1/4</text>
-  <text x="780" y="213" font-size="13" fill="#475569" text-anchor="middle">1/4</text>
-  <text x="848" y="290" font-size="13" fill="#475569" text-anchor="middle">0</text>
-  <text x="872" y="140" font-size="13" fill="#475569" text-anchor="middle">1/2</text>
+  <text x="608" y="140" font-size="16.25" fill="#475569" text-anchor="middle">1/2</text>
+  <text x="632" y="290" font-size="16.25" fill="#475569" text-anchor="middle">0</text>
+  <text x="700" y="213" font-size="16.25" fill="#475569" text-anchor="middle">1/4</text>
+  <text x="780" y="213" font-size="16.25" fill="#475569" text-anchor="middle">1/4</text>
+  <text x="848" y="290" font-size="16.25" fill="#475569" text-anchor="middle">0</text>
+  <text x="872" y="140" font-size="16.25" fill="#475569" text-anchor="middle">1/2</text>
 
-  <text x="145" y="324" font-size="12" fill="#334155" text-anchor="middle">c = 00</text>
-  <text x="225" y="324" font-size="12" fill="#334155" text-anchor="middle">c = 01</text>
-  <text x="305" y="324" font-size="12" fill="#334155" text-anchor="middle">c = 10</text>
-  <text x="385" y="324" font-size="12" fill="#334155" text-anchor="middle">c = 11</text>
-  <text x="620" y="324" font-size="12" fill="#334155" text-anchor="middle">c = 00</text>
-  <text x="700" y="324" font-size="12" fill="#334155" text-anchor="middle">c = 01</text>
-  <text x="780" y="324" font-size="12" fill="#334155" text-anchor="middle">c = 10</text>
-  <text x="860" y="324" font-size="12" fill="#334155" text-anchor="middle">c = 11</text>
+  <text x="145" y="324" font-size="15" fill="#334155" text-anchor="middle">c = 00</text>
+  <text x="225" y="324" font-size="15" fill="#334155" text-anchor="middle">c = 01</text>
+  <text x="305" y="324" font-size="15" fill="#334155" text-anchor="middle">c = 10</text>
+  <text x="385" y="324" font-size="15" fill="#334155" text-anchor="middle">c = 11</text>
+  <text x="620" y="324" font-size="15" fill="#334155" text-anchor="middle">c = 00</text>
+  <text x="700" y="324" font-size="15" fill="#334155" text-anchor="middle">c = 01</text>
+  <text x="780" y="324" font-size="15" fill="#334155" text-anchor="middle">c = 10</text>
+  <text x="860" y="324" font-size="15" fill="#334155" text-anchor="middle">c = 11</text>
 
   <rect x="356" y="392" width="16" height="16" rx="3" fill="#2563eb"/>
-  <text x="380" y="405" font-size="14" fill="#334155">message m₀</text>
+  <text x="380" y="405" font-size="17.5" fill="#334155">message m₀</text>
   <rect x="502" y="392" width="16" height="16" rx="3" fill="#d97706"/>
-  <text x="526" y="405" font-size="14" fill="#334155">message m₁</text>
+  <text x="526" y="405" font-size="17.5" fill="#334155">message m₁</text>
 </svg>

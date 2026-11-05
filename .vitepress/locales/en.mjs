@@ -102,6 +102,10 @@ export default {
                   text: "2.2 Stream Ciphers and Pseudorandom Generators",
                   link: "/en/tutorials/cryptography/chapter-02/2",
                 },
+                {
+                  text: "2.3 Attacks on Stream Ciphers and the One-Time Pad",
+                  link: "/en/tutorials/cryptography/chapter-02/3",
+                },
               ],
             },
           ],

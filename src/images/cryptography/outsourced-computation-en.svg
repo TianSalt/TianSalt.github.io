@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 400" width="960" height="400" font-family="sans-serif" role="img" aria-labelledby="t d">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 400" width="960" height="400" font-family="'Segoe UI', 'Segoe UI Symbol', Roboto, 'Helvetica Neue', Arial, 'DejaVu Sans', sans-serif" role="img" aria-labelledby="t d">
   <title id="t">Privately outsourcing computation</title>
   <desc id="d">Alice sends the encrypted query E[query] to a search engine. The engine computes directly on the ciphertext and returns the encrypted result E[results]. Eve sees only ciphertexts, and the server never sees the plaintext.</desc>
   <defs>
@@ -9,29 +9,29 @@
   <rect width="960" height="400" rx="18" fill="#f8fafc"/>
   <rect x="0.75" y="0.75" width="958.5" height="398.5" rx="17.25" fill="none" stroke="#e2e8f0" stroke-width="1.5"/>
 
-  <text x="48" y="54" font-size="18" font-weight="700" fill="#0f172a">Privately outsourcing computation</text>
+  <text x="48" y="54" font-size="22.5" font-weight="700" fill="#0f172a">Privately outsourcing computation</text>
 
   <rect x="48" y="140" width="130" height="110" rx="14" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
-  <text x="113" y="184" font-size="20" font-weight="700" fill="#0f172a" text-anchor="middle">Alice</text>
-  <text x="113" y="210" font-size="13" fill="#475569" text-anchor="middle">query m</text>
+  <text x="113" y="184" font-size="25" font-weight="700" fill="#0f172a" text-anchor="middle">Alice</text>
+  <text x="113" y="210" font-size="16.25" fill="#475569" text-anchor="middle">query m</text>
 
   <line x1="178" y1="168" x2="676" y2="168" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
   <rect x="351" y="150" width="140" height="38" rx="19" fill="#e0e7ff" stroke="#c7d2fe" stroke-width="2"/>
-  <text x="421" y="175" font-size="15" fill="#1d4ed8" text-anchor="middle">E[ query ]</text>
+  <text x="421" y="175" font-size="18.75" fill="#1d4ed8" text-anchor="middle">E[ query ]</text>
 
   <rect x="682" y="120" width="230" height="150" rx="14" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2"/>
-  <text x="797" y="168" font-size="18" font-weight="700" fill="#475569" text-anchor="middle">search engine</text>
-  <text x="797" y="198" font-size="13" fill="#64748b" text-anchor="middle">computes directly on the</text>
-  <text x="797" y="218" font-size="13" fill="#64748b" text-anchor="middle">ciphertext</text>
+  <text x="797" y="168" font-size="22.5" font-weight="700" fill="#475569" text-anchor="middle">search engine</text>
+  <text x="797" y="198" font-size="16.25" fill="#64748b" text-anchor="middle">computes directly on the</text>
+  <text x="797" y="218" font-size="16.25" fill="#64748b" text-anchor="middle">ciphertext</text>
 
   <line x1="682" y1="240" x2="182" y2="240" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
   <rect x="347" y="222" width="148" height="38" rx="19" fill="#e0e7ff" stroke="#c7d2fe" stroke-width="2"/>
-  <text x="421" y="247" font-size="15" fill="#1d4ed8" text-anchor="middle">E[ results ]</text>
+  <text x="421" y="247" font-size="18.75" fill="#1d4ed8" text-anchor="middle">E[ results ]</text>
 
   <line x1="421" y1="260" x2="421" y2="286" stroke="#fca5a5" stroke-width="2" stroke-dasharray="5 5"/>
-  <rect x="347" y="286" width="148" height="46" rx="12" fill="#fef2f2" stroke="#fca5a5" stroke-width="2"/>
-  <text x="421" y="315" font-size="14" fill="#991b1b" text-anchor="middle">Eve sees only E[·]</text>
+  <rect x="333" y="286" width="176" height="46" rx="12" fill="#fef2f2" stroke="#fca5a5" stroke-width="2"/>
+  <text x="421" y="315" font-size="17.5" fill="#991b1b" text-anchor="middle">Eve sees only E[·]</text>
 
-  <text x="912" y="300" font-size="15" fill="#475569" text-anchor="end">The server never sees the plaintext,</text>
-  <text x="912" y="324" font-size="15" fill="#475569" text-anchor="end">and Eve never sees the query.</text>
+  <text x="912" y="300" font-size="18.75" fill="#475569" text-anchor="end">The server never sees the plaintext,</text>
+  <text x="912" y="324" font-size="18.75" fill="#475569" text-anchor="end">and Eve never sees the query.</text>
 </svg>

@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 400" width="960" height="400" font-family="sans-serif" role="img" aria-labelledby="t d">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 400" width="960" height="400" font-family="'Segoe UI', 'Segoe UI Symbol', Roboto, 'Helvetica Neue', Arial, 'DejaVu Sans', sans-serif" role="img" aria-labelledby="t d">
   <title id="t">Deterministic and randomized algorithms</title>
   <desc id="d">A deterministic algorithm A takes m and returns the same y every run. A randomized algorithm also reads fresh coins r from the set of n-bit strings, so its output is itself a random variable.</desc>
   <defs>
@@ -9,29 +9,29 @@
   <rect width="960" height="400" rx="18" fill="#f8fafc"/>
   <rect x="0.75" y="0.75" width="958.5" height="398.5" rx="17.25" fill="none" stroke="#e2e8f0" stroke-width="1.5"/>
 
-  <text x="48" y="54" font-size="18" font-weight="700" fill="#0f172a">Deterministic and randomized algorithms</text>
+  <text x="48" y="54" font-size="22.5" font-weight="700" fill="#0f172a">Deterministic and randomized algorithms</text>
 
-  <text x="252" y="130" font-size="16" font-weight="700" fill="#0f172a" text-anchor="middle">deterministic</text>
-  <text x="110" y="218" font-size="22" fill="#0f172a" text-anchor="end">m</text>
+  <text x="252" y="130" font-size="20" font-weight="700" fill="#0f172a" text-anchor="middle">deterministic</text>
+  <text x="110" y="218" font-size="27.5" fill="#0f172a" text-anchor="end">m</text>
   <line x1="122" y1="210" x2="178" y2="210" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
   <rect x="182" y="175" width="140" height="70" rx="14" fill="#ffffff" stroke="#94a3b8" stroke-width="2"/>
-  <text x="252" y="222" font-size="26" font-weight="700" fill="#0f172a" text-anchor="middle">A</text>
+  <text x="252" y="222" font-size="32.5" font-weight="700" fill="#0f172a" text-anchor="middle">A</text>
   <line x1="322" y1="210" x2="378" y2="210" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
-  <text x="390" y="218" font-size="22" fill="#0f172a">y</text>
-  <text x="252" y="300" font-size="18" fill="#475569" text-anchor="middle">y ← A(m)</text>
-  <text x="252" y="326" font-size="13" fill="#64748b" text-anchor="middle">same m, same y, every run</text>
+  <text x="390" y="218" font-size="27.5" fill="#0f172a">y</text>
+  <text x="252" y="300" font-size="22.5" fill="#475569" text-anchor="middle">y ← A(m)</text>
+  <text x="252" y="326" font-size="16.25" fill="#64748b" text-anchor="middle">same m, same y, every run</text>
 
-  <text x="708" y="130" font-size="16" font-weight="700" fill="#0f172a" text-anchor="middle">randomized</text>
-  <text x="566" y="198" font-size="22" fill="#0f172a" text-anchor="end">m</text>
+  <text x="708" y="130" font-size="20" font-weight="700" fill="#0f172a" text-anchor="middle">randomized</text>
+  <text x="566" y="198" font-size="27.5" fill="#0f172a" text-anchor="end">m</text>
   <line x1="578" y1="190" x2="634" y2="190" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
-  <text x="566" y="252" font-size="22" font-weight="700" fill="#1d4ed8" text-anchor="end">r</text>
+  <text x="566" y="252" font-size="27.5" font-weight="700" fill="#1d4ed8" text-anchor="end">r</text>
   <line x1="578" y1="244" x2="634" y2="244" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)"/>
   <rect x="638" y="175" width="140" height="70" rx="14" fill="#ffffff" stroke="#2563eb" stroke-width="2"/>
-  <text x="708" y="222" font-size="26" font-weight="700" fill="#1e3a8a" text-anchor="middle">A</text>
+  <text x="708" y="222" font-size="32.5" font-weight="700" fill="#1e3a8a" text-anchor="middle">A</text>
   <line x1="778" y1="210" x2="834" y2="210" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
-  <text x="846" y="218" font-size="22" fill="#0f172a">y</text>
-  <text x="708" y="300" font-size="18" fill="#475569" text-anchor="middle">y ← A(m; r),  r ← {0,1}ⁿ</text>
-  <text x="708" y="326" font-size="13" fill="#64748b" text-anchor="middle">fresh coins each run: the output is a random variable</text>
+  <text x="846" y="218" font-size="27.5" fill="#0f172a">y</text>
+  <text x="708" y="300" font-size="22.5" fill="#475569" text-anchor="middle">y ← A(m; r),  r ← {0,1}ⁿ</text>
+  <text x="708" y="326" font-size="16.25" fill="#64748b" text-anchor="middle">fresh coins each run: the output is a random variable</text>
 
-  <text x="48" y="368" font-size="15" fill="#475569">Encryption is the example: A(m; k) = E(k, m), where the key plays the role of the coins.</text>
+  <text x="48" y="368" font-size="18.75" fill="#475569">Encryption is the example: A(m; k) = E(k, m), where the key plays the role of the coins.</text>
 </svg>

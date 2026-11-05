@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 400" width="960" height="400" font-family="sans-serif" role="img" aria-labelledby="t d">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 400" width="960" height="400" font-family="'Segoe UI', 'Segoe UI Symbol', Roboto, 'Helvetica Neue', Arial, 'DejaVu Sans', sans-serif" role="img" aria-labelledby="t d">
   <title id="t">Encrypted files on disk are communication across time</title>
   <desc id="d">Alice today encrypts File 1 and File 2 onto a disk; Alice tomorrow reads them back. The same two requirements apply: no eavesdropping on the stored bits, no undetected tampering.</desc>
   <defs>
@@ -9,29 +9,29 @@
   <rect width="960" height="400" rx="18" fill="#f8fafc"/>
   <rect x="0.75" y="0.75" width="958.5" height="398.5" rx="17.25" fill="none" stroke="#e2e8f0" stroke-width="1.5"/>
 
-  <text x="48" y="54" font-size="18" font-weight="700" fill="#0f172a">Files on disk: Alice today sends a message to Alice tomorrow</text>
+  <text x="48" y="54" font-size="22.5" font-weight="700" fill="#0f172a">Files on disk: Alice today sends a message to Alice tomorrow</text>
 
   <rect x="56" y="150" width="150" height="100" rx="16" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
-  <text x="131" y="196" font-size="24" font-weight="700" fill="#0f172a" text-anchor="middle">Alice</text>
-  <text x="131" y="226" font-size="15" fill="#64748b" text-anchor="middle">today</text>
+  <text x="131" y="196" font-size="30" font-weight="700" fill="#0f172a" text-anchor="middle">Alice</text>
+  <text x="131" y="226" font-size="18.75" fill="#64748b" text-anchor="middle">today</text>
 
   <line x1="206" y1="200" x2="300" y2="200" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
-  <text x="253" y="182" font-size="15" fill="#64748b" text-anchor="middle">encrypts</text>
+  <text x="253" y="182" font-size="18.75" fill="#64748b" text-anchor="middle">encrypts</text>
 
   <rect x="306" y="90" width="352" height="220" rx="16" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2"/>
-  <text x="482" y="128" font-size="18" font-weight="700" fill="#475569" text-anchor="middle">Disk</text>
+  <text x="482" y="128" font-size="22.5" font-weight="700" fill="#475569" text-anchor="middle">Disk</text>
   <rect x="336" y="146" width="292" height="64" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
-  <text x="482" y="186" font-size="18" fill="#1e3a8a" text-anchor="middle">File 1</text>
+  <text x="482" y="186" font-size="22.5" fill="#1e3a8a" text-anchor="middle">File 1</text>
   <rect x="336" y="222" width="292" height="64" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
-  <text x="482" y="262" font-size="18" fill="#1e3a8a" text-anchor="middle">File 2</text>
+  <text x="482" y="262" font-size="22.5" fill="#1e3a8a" text-anchor="middle">File 2</text>
 
   <line x1="658" y1="200" x2="754" y2="200" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
-  <text x="706" y="182" font-size="15" fill="#64748b" text-anchor="middle">decrypts</text>
+  <text x="706" y="182" font-size="18.75" fill="#64748b" text-anchor="middle">decrypts</text>
 
   <rect x="760" y="150" width="150" height="100" rx="16" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
-  <text x="835" y="196" font-size="24" font-weight="700" fill="#0f172a" text-anchor="middle">Alice</text>
-  <text x="835" y="226" font-size="15" fill="#64748b" text-anchor="middle">tomorrow</text>
+  <text x="835" y="196" font-size="30" font-weight="700" fill="#0f172a" text-anchor="middle">Alice</text>
+  <text x="835" y="226" font-size="18.75" fill="#64748b" text-anchor="middle">tomorrow</text>
 
-  <text x="56" y="362" font-size="16" fill="#1d4ed8" text-anchor="start">Confidentiality: a stolen disk leaks nothing</text>
-  <text x="904" y="362" font-size="16" fill="#059669" text-anchor="end">Integrity: edited bits are detected on read-back</text>
+  <text x="56" y="356" font-size="20" fill="#1d4ed8" text-anchor="start">Confidentiality: a stolen disk leaks nothing</text>
+  <text x="56" y="384" font-size="20" fill="#059669" text-anchor="start">Integrity: edited bits are detected on read-back</text>
 </svg>

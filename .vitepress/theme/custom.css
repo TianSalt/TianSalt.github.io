@@ -152,6 +152,10 @@ body {
   line-height: var(--vp-doc-line-height);
 }
 
+.vp-doc li + li {
+  margin-top: 0;
+}
+
 .url {
   word-break: break-all;
 }
@@ -320,7 +324,9 @@ m-pai {
   margin: 0 0.1em;
 }
 
-n-w {
+/* Keeps an atomic inline (formula, tile) and the punctuation around it
+   on the same line; see theme/index.mjs glueAtomicPunct. */
+.atomic-join {
   white-space: nowrap;
 }
 

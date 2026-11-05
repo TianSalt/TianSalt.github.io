@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 400" width="960" height="400" font-family="sans-serif" role="img" aria-labelledby="t d">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 400" width="960" height="400" font-family="'Segoe UI', 'Segoe UI Symbol', Roboto, 'Helvetica Neue', Arial, 'DejaVu Sans', sans-serif" role="img" aria-labelledby="t d">
   <title id="t">The cut-and-paste attack on a fixed signature</title>
   <desc id="d">A signed contract carries a handwritten signature. The signature is cut out and pasted onto a different contract, where it still looks genuine, showing why a secure signature must depend on the document it signs.</desc>
   <defs>
@@ -9,31 +9,33 @@
   <rect width="960" height="400" rx="18" fill="#f8fafc"/>
   <rect x="0.75" y="0.75" width="958.5" height="398.5" rx="17.25" fill="none" stroke="#e2e8f0" stroke-width="1.5"/>
 
-  <text x="48" y="54" font-size="18" font-weight="700" fill="#0f172a">A fixed signature mark can be pasted onto any document</text>
+  <text x="48" y="54" font-size="22.5" font-weight="700" fill="#0f172a">A fixed signature mark can be pasted onto any document</text>
 
   <rect x="56" y="100" width="230" height="190" rx="12" fill="#ffffff" stroke="#94a3b8" stroke-width="2"/>
   <rect x="90" y="134" width="160" height="11" rx="4" fill="#cbd5e1"/>
   <rect x="90" y="160" width="160" height="11" rx="4" fill="#cbd5e1"/>
   <rect x="90" y="186" width="104" height="11" rx="4" fill="#cbd5e1"/>
-  <text x="171" y="252" font-size="26" font-style="italic" font-weight="700" fill="#1d4ed8" text-anchor="middle">Alice</text>
+  <text x="171" y="252" font-size="32.5" font-style="italic" font-weight="700" fill="#1d4ed8" text-anchor="middle">Alice</text>
   <path d="M126 268 Q 148 278 171 268 T 216 268" stroke="#1d4ed8" stroke-width="2.5" fill="none"/>
-  <text x="171" y="322" font-size="13" fill="#64748b" text-anchor="middle">a signed contract</text>
+  <text x="171" y="322" font-size="16.25" fill="#64748b" text-anchor="middle">a signed contract</text>
 
   <line x1="298" y1="195" x2="388" y2="195" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
-  <text x="343" y="178" font-size="14" fill="#64748b" text-anchor="middle">cut and paste</text>
+  <text x="343" y="178" font-size="15.5" fill="#64748b" text-anchor="middle">cut and paste</text>
 
   <rect x="400" y="100" width="230" height="190" rx="12" fill="#ffffff" stroke="#94a3b8" stroke-width="2"/>
   <rect x="434" y="134" width="160" height="11" rx="4" fill="#cbd5e1"/>
   <rect x="434" y="160" width="160" height="11" rx="4" fill="#cbd5e1"/>
   <rect x="434" y="186" width="130" height="11" rx="4" fill="#cbd5e1"/>
   <rect x="452" y="222" width="126" height="54" rx="8" fill="none" stroke="#d97706" stroke-width="2" stroke-dasharray="6 5"/>
-  <text x="515" y="252" font-size="26" font-style="italic" font-weight="700" fill="#1d4ed8" text-anchor="middle">Alice</text>
+  <text x="515" y="252" font-size="32.5" font-style="italic" font-weight="700" fill="#1d4ed8" text-anchor="middle">Alice</text>
   <path d="M470 268 Q 492 278 515 268 T 560 268" stroke="#1d4ed8" stroke-width="2.5" fill="none"/>
-  <text x="515" y="322" font-size="13" fill="#64748b" text-anchor="middle">the same mark, different contract</text>
+  <text x="515" y="322" font-size="16.25" fill="#64748b" text-anchor="middle">the same mark, different contract</text>
 
-  <text x="904" y="150" font-size="15" fill="#475569" text-anchor="end">The mark does not change when</text>
-  <text x="904" y="176" font-size="15" fill="#475569" text-anchor="end">the document does, so it certifies</text>
-  <text x="904" y="202" font-size="15" fill="#475569" text-anchor="end">nothing about the text under it.</text>
-  <text x="904" y="256" font-size="15" font-weight="700" fill="#1d4ed8" text-anchor="end">A secure signature must instead</text>
-  <text x="904" y="282" font-size="15" font-weight="700" fill="#1d4ed8" text-anchor="end">be a function of the message.</text>
+  <text x="904" y="140" font-size="18.75" fill="#475569" text-anchor="end">The mark does not change</text>
+  <text x="904" y="168" font-size="18.75" fill="#475569" text-anchor="end">when the document does,</text>
+  <text x="904" y="196" font-size="18.75" fill="#475569" text-anchor="end">so it certifies nothing</text>
+  <text x="904" y="224" font-size="18.75" fill="#475569" text-anchor="end">about the text under it.</text>
+  <text x="904" y="268" font-size="18.75" font-weight="700" fill="#1d4ed8" text-anchor="end">A secure signature must</text>
+  <text x="904" y="296" font-size="18.75" font-weight="700" fill="#1d4ed8" text-anchor="end">instead be a function</text>
+  <text x="904" y="324" font-size="18.75" font-weight="700" fill="#1d4ed8" text-anchor="end">of the message.</text>
 </svg>

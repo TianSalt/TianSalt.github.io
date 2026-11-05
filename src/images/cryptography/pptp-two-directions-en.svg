@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 340" width="960" height="340" font-family="'Segoe UI', 'Segoe UI Symbol', Roboto, 'Helvetica Neue', Arial, 'DejaVu Sans', sans-serif" role="img" aria-labelledby="t d">
+  <title id="t">PPTP encrypts both directions of a session with the same key</title>
+  <desc id="d">A shared key k feeds the generator G in both directions. Client messages m1, m2, m3 are concatenated into one stream and XORed with G(k); server messages s1, s2, s3 are concatenated into a second stream and XORed with the same G(k), restarting the same pad from its first bit.</desc>
+  <defs>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrowRed" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#dc2626"/>
+    </marker>
+  </defs>
+  <rect width="960" height="340" rx="18" fill="#f8fafc"/>
+  <rect x="0.75" y="0.75" width="958.5" height="338.5" rx="17.25" fill="none" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <text x="48" y="38" font-size="18.75" font-weight="700" fill="#0f172a">One key, two streams, one pad</text>
+
+  <rect x="390" y="56" width="180" height="44" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="480" y="84" font-size="18.75" font-weight="700" fill="#1e3a8a" text-anchor="middle">shared key  k</text>
+
+  <text x="215" y="128" font-size="15" fill="#475569" text-anchor="middle">client → server</text>
+  <line x1="100" y1="148" x2="300" y2="148" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrowBlue)"/>
+  <text x="200" y="140" font-size="16.25" fill="#1e3a8a" text-anchor="middle">m₁</text>
+  <line x1="100" y1="176" x2="300" y2="176" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrowBlue)"/>
+  <text x="200" y="168" font-size="16.25" fill="#1e3a8a" text-anchor="middle">m₂</text>
+  <line x1="100" y1="204" x2="300" y2="204" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrowBlue)"/>
+  <text x="200" y="196" font-size="16.25" fill="#1e3a8a" text-anchor="middle">m₃</text>
+  <text x="215" y="240" font-size="17.5" fill="#334155" text-anchor="middle">[m₁ ‖ m₂ ‖ m₃] ⊕ G(k)</text>
+
+  <text x="745" y="128" font-size="15" fill="#475569" text-anchor="middle">server → client</text>
+  <line x1="860" y1="148" x2="660" y2="148" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrowBlue)"/>
+  <text x="760" y="140" font-size="16.25" fill="#1e3a8a" text-anchor="middle">s₁</text>
+  <line x1="860" y1="176" x2="660" y2="176" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrowBlue)"/>
+  <text x="760" y="168" font-size="16.25" fill="#1e3a8a" text-anchor="middle">s₂</text>
+  <line x1="860" y1="204" x2="660" y2="204" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrowBlue)"/>
+  <text x="760" y="196" font-size="16.25" fill="#1e3a8a" text-anchor="middle">s₃</text>
+  <text x="745" y="240" font-size="17.5" fill="#334155" text-anchor="middle">[s₁ ‖ s₂ ‖ s₃] ⊕ G(k)</text>
+
+  <line x1="420" y1="100" x2="240" y2="222" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="5 6"/>
+  <line x1="540" y1="100" x2="720" y2="222" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="5 6"/>
+
+  <text x="480" y="286" font-size="16.25" fill="#dc2626" text-anchor="middle">each direction restarts the same pad G(k) at the same bit</text>
+  <text x="480" y="312" font-size="16.25" fill="#d97706" text-anchor="middle">the fix: k = (k(C→S), k(S→C)), one key per direction</text>
+</svg>
