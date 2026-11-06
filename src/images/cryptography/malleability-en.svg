@@ -12,41 +12,41 @@
   <rect width="960" height="430" rx="18" fill="#f8fafc"/>
   <rect x="0.75" y="0.75" width="958.5" height="428.5" rx="17.25" fill="none" stroke="#e2e8f0" stroke-width="1.5"/>
 
-  <text x="48" y="48" font-size="19" font-weight="700" fill="#0f172a">One intercepted ciphertext, one controlled edit</text>
+  <text x="48" y="48" font-size="23" font-weight="700" fill="#0f172a">One intercepted ciphertext, one controlled edit</text>
 
   <rect x="48" y="122" width="110" height="56" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="1.5"/>
-  <text x="103" y="157" font-size="19" font-weight="700" fill="#0f172a" text-anchor="middle">m</text>
+  <text x="103" y="157" font-size="23" font-weight="700" fill="#0f172a" text-anchor="middle">m</text>
 
   <line x1="158" y1="150" x2="182" y2="150" stroke="#475569" stroke-width="1.5"/>
   <circle cx="197" cy="150" r="15" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
-  <text x="197" y="156" font-size="19" fill="#334155" text-anchor="middle">&#x2295;</text>
-  <text x="197" y="116" font-size="14" fill="#475569" text-anchor="middle">G(k)</text>
+  <text x="197" y="156" font-size="22" fill="#334155" text-anchor="middle">&#x2295;</text>
+  <text x="197" y="116" font-size="17" fill="#475569" text-anchor="middle">G(k)</text>
   <line x1="212" y1="150" x2="236" y2="150" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
 
   <rect x="240" y="122" width="200" height="56" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
-  <text x="340" y="157" font-size="17" fill="#1e3a8a" text-anchor="middle">c = m &#x2295; G(k)</text>
+  <text x="340" y="157" font-size="21" fill="#1e3a8a" text-anchor="middle">c = m &#x2295; G(k)</text>
 
   <line x1="440" y1="150" x2="464" y2="150" stroke="#dc2626" stroke-width="1.5"/>
   <circle cx="479" cy="150" r="15" fill="#fef2f2" stroke="#dc2626" stroke-width="1.5"/>
-  <text x="479" y="156" font-size="19" fill="#dc2626" text-anchor="middle">&#x2295;</text>
-  <text x="479" y="116" font-size="14" fill="#dc2626" text-anchor="middle">p, by Eve</text>
+  <text x="479" y="156" font-size="22" fill="#dc2626" text-anchor="middle">&#x2295;</text>
+  <text x="479" y="116" font-size="17" fill="#dc2626" text-anchor="middle">p, by Eve</text>
   <line x1="494" y1="150" x2="518" y2="150" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arrowRed)"/>
 
   <rect x="522" y="122" width="200" height="56" rx="10" fill="#ffffff" stroke="#dc2626" stroke-width="1.5"/>
-  <text x="622" y="157" font-size="17" fill="#dc2626" text-anchor="middle">c&#x2032; = c &#x2295; p</text>
+  <text x="622" y="157" font-size="21" fill="#dc2626" text-anchor="middle">c&#x2032; = c &#x2295; p</text>
 
   <line x1="722" y1="150" x2="746" y2="150" stroke="#475569" stroke-width="1.5"/>
   <circle cx="761" cy="150" r="15" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
-  <text x="761" y="156" font-size="19" fill="#334155" text-anchor="middle">&#x2295;</text>
-  <text x="761" y="116" font-size="14" fill="#475569" text-anchor="middle">G(k)</text>
+  <text x="761" y="156" font-size="22" fill="#334155" text-anchor="middle">&#x2295;</text>
+  <text x="761" y="116" font-size="17" fill="#475569" text-anchor="middle">G(k)</text>
   <line x1="776" y1="150" x2="800" y2="150" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
 
   <rect x="804" y="122" width="108" height="56" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="1.5"/>
-  <text x="858" y="157" font-size="19" font-weight="700" fill="#0f172a" text-anchor="middle">m &#x2295; p</text>
+  <text x="858" y="157" font-size="23" font-weight="700" fill="#0f172a" text-anchor="middle">m &#x2295; p</text>
 
-  <text x="480" y="256" font-size="15.5" fill="#475569" text-anchor="middle">Bob decrypts with the same pad, so the edit survives:</text>
-  <text x="480" y="296" font-size="19" fill="#0f172a" text-anchor="middle">D(k, c&#x2032;) = c&#x2032; &#x2295; G(k) = (m &#x2295; G(k) &#x2295; p) &#x2295; G(k) = m &#x2295; p</text>
-  <text x="480" y="334" font-size="16.5" fill="#dc2626" text-anchor="middle">whatever Eve XORs into the ciphertext reappears, undetected, in the plaintext</text>
+  <text x="480" y="256" font-size="19" fill="#475569" text-anchor="middle">Bob decrypts with the same pad, so the edit survives:</text>
+  <text x="480" y="296" font-size="23" fill="#0f172a" text-anchor="middle">D(k, c&#x2032;) = c&#x2032; &#x2295; G(k) = (m &#x2295; G(k) &#x2295; p) &#x2295; G(k) = m &#x2295; p</text>
+  <text x="480" y="334" font-size="19.5" fill="#dc2626" text-anchor="middle">whatever Eve XORs into the ciphertext reappears, undetected, in the plaintext</text>
 
-  <text x="480" y="396" font-size="15.5" fill="#475569" text-anchor="middle">Bob &#x2295; Eve = 07 19 07 (hex), so p = 07 19 07 turns &#x201C;From: Bob&#x201D; into &#x201C;From: Eve&#x201D;</text>
+  <text x="480" y="396" font-size="17.5" fill="#475569" text-anchor="middle">Bob &#x2295; Eve = 07 19 07 (hex), so p = 07 19 07 turns &#x201C;From: Bob&#x201D; into &#x201C;From: Eve&#x201D;</text>
 </svg>

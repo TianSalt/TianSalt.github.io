@@ -15,7 +15,7 @@
   <text x="710" y="112" font-size="22.5" font-weight="700" fill="#0f172a" text-anchor="middle">Bob</text>
 
   <text x="48" y="190" font-size="27.5" fill="#0f172a">m</text>
-  <line x1="64" y1="182" x2="100" y2="182" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="78" y1="182" x2="100" y2="182" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
 
   <rect x="104" y="142" width="80" height="80" rx="14" fill="#ffffff" stroke="#2563eb" stroke-width="2"/>
   <text x="144" y="194" font-size="32.5" font-weight="700" fill="#1e3a8a" text-anchor="middle">E</text>
@@ -23,9 +23,9 @@
   <line x1="144" y1="288" x2="144" y2="230" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)"/>
 
   <line x1="184" y1="182" x2="666" y2="182" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
-  <text x="225" y="166" font-size="21.25" fill="#475569" text-anchor="middle">c = E(k, m)</text>
-  <rect x="290" y="154" width="260" height="56" rx="28" fill="#eef2ff" stroke="#a5b4fc" stroke-width="2" stroke-dasharray="7 7"/>
-  <text x="420" y="188" font-size="20" fill="#475569" text-anchor="middle">insecure channel</text>
+  <text x="262" y="166" font-size="21.25" fill="#475569" text-anchor="middle">c = E(k, m)</text>
+  <rect x="350" y="154" width="260" height="56" rx="28" fill="#eef2ff" stroke="#a5b4fc" stroke-width="2" stroke-dasharray="7 7"/>
+  <text x="480" y="188" font-size="20" fill="#475569" text-anchor="middle">insecure channel</text>
 
   <rect x="670" y="142" width="80" height="80" rx="14" fill="#ffffff" stroke="#2563eb" stroke-width="2"/>
   <text x="710" y="194" font-size="32.5" font-weight="700" fill="#1e3a8a" text-anchor="middle">D</text>
