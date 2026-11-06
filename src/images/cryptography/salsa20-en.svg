@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 360" width="960" height="360" font-family="'Segoe UI', 'Segoe UI Symbol', Roboto, 'Helvetica Neue', Arial, 'DejaVu Sans', sans-serif" role="img" aria-labelledby="t d">
+  <title id="t">One round of the Salsa20 generator</title>
+  <desc id="d">The key, the nonce, and the counter fill a 64-byte block laid out as constants, key, nonce, and counter. An invertible function h is applied ten times, and the original block is added back word by word to give the 64-byte output.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#475569"/>
+    </marker>
+  </defs>
+  <rect width="960" height="360" rx="18" fill="#f8fafc"/>
+  <rect x="0.75" y="0.75" width="958.5" height="358.5" rx="17.25" fill="none" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <text x="48" y="48" font-size="23" font-weight="700" fill="#0f172a">Salsa20: one 64-byte block per counter value</text>
+
+  <rect x="48" y="124" width="124" height="56" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="110" y="148" font-size="18" fill="#1e3a8a" text-anchor="middle">k &#x2016; r &#x2016; i</text>
+  <text x="110" y="168" font-size="14.5" fill="#1e40af" text-anchor="middle">32 bytes</text>
+  <line x1="172" y1="152" x2="200" y2="152" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <text x="396" y="202" font-size="15.5" fill="#475569" text-anchor="middle">the 64-byte block</text>
+  <g fill="#f1f5f9" stroke="#64748b" stroke-width="1.25">
+    <rect x="204" y="124" width="24" height="56"/>
+    <rect x="228" y="124" width="96" height="56"/>
+    <rect x="324" y="124" width="24" height="56"/>
+    <rect x="348" y="124" width="48" height="56"/>
+    <rect x="396" y="124" width="48" height="56"/>
+    <rect x="444" y="124" width="24" height="56"/>
+    <rect x="468" y="124" width="96" height="56"/>
+    <rect x="564" y="124" width="24" height="56"/>
+  </g>
+  <g font-size="13" fill="#475569" text-anchor="middle">
+    <text x="216" y="157">&#x3C4;&#x2080;</text>
+    <text x="336" y="157">&#x3C4;&#x2081;</text>
+    <text x="456" y="157">&#x3C4;&#x2082;</text>
+    <text x="576" y="157">&#x3C4;&#x2083;</text>
+  </g>
+  <g font-size="16" fill="#0f172a" text-anchor="middle">
+    <text x="276" y="157">k</text>
+    <text x="372" y="157">r</text>
+    <text x="420" y="157">i</text>
+    <text x="516" y="157">k</text>
+  </g>
+
+  <line x1="588" y1="152" x2="616" y2="152" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="620" y="124" width="96" height="56" rx="10" fill="#ffffff" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="668" y="150" font-size="22" font-weight="700" fill="#1e3a8a" text-anchor="middle">h</text>
+  <text x="668" y="170" font-size="14.5" fill="#64748b" text-anchor="middle">10 rounds</text>
+  <line x1="716" y1="152" x2="737" y2="152" stroke="#475569" stroke-width="1.5"/>
+
+  <line x1="396" y1="124" x2="396" y2="86" stroke="#475569" stroke-width="1.5"/>
+  <line x1="396" y1="86" x2="760" y2="86" stroke="#475569" stroke-width="1.5"/>
+  <line x1="760" y1="86" x2="760" y2="131" stroke="#475569" stroke-width="1.5"/>
+  <circle cx="760" cy="152" r="19" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+  <text x="760" y="159" font-size="26" fill="#334155" text-anchor="middle">&#x2295;</text>
+  <text x="760" y="72" font-size="14.5" fill="#475569" text-anchor="middle">add the block back, word by word</text>
+  <line x1="779" y1="152" x2="806" y2="152" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="810" y="124" width="110" height="56" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="865" y="148" font-size="16" fill="#1e3a8a" text-anchor="middle">64-byte</text>
+  <text x="865" y="168" font-size="16" fill="#1e3a8a" text-anchor="middle">pad block</text>
+
+  <text x="48" y="236" font-size="19" fill="#0f172a">Salsa20(k; r) := H(k,(r,0)) &#x2016; H(k,(r,1)) &#x2016; H(k,(r,2)) &#x2016; &#x22EF;</text>
+  <text x="48" y="266" font-size="16" fill="#475569">each call to H fills the block with fixed constants, the key, the nonce, and the counter i</text>
+  <text x="48" y="316" font-size="17.5" fill="#dc2626">h is invertible: without the block added back, its output could be undone and the input tested</text>
+</svg>

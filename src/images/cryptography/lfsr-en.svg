@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 380" width="960" height="380" font-family="'Segoe UI', 'Segoe UI Symbol', Roboto, 'Helvetica Neue', Arial, 'DejaVu Sans', sans-serif" role="img" aria-labelledby="t d">
+  <title id="t">A linear feedback shift register</title>
+  <desc id="d">A row of bit cells shifts one position per clock. The bit at the right end is the output. Selected cells, the taps, feed an XOR whose result enters the register at the left end. The seed is the initial state of the cells.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#475569"/>
+    </marker>
+  </defs>
+  <rect width="960" height="380" rx="18" fill="#f8fafc"/>
+  <rect x="0.75" y="0.75" width="958.5" height="378.5" rx="17.25" fill="none" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <text x="48" y="48" font-size="23" font-weight="700" fill="#0f172a">A linear feedback shift register (LFSR)</text>
+  <text x="200" y="80" font-size="15.5" fill="#475569">the seed is the initial state of the cells</text>
+
+  <g fill="#f1f5f9" stroke="#64748b" stroke-width="1.5">
+    <rect x="200" y="100" width="52" height="48"/>
+    <rect x="252" y="100" width="52" height="48"/>
+    <rect x="304" y="100" width="52" height="48"/>
+    <rect x="356" y="100" width="52" height="48"/>
+    <rect x="408" y="100" width="52" height="48"/>
+    <rect x="460" y="100" width="52" height="48"/>
+    <rect x="512" y="100" width="52" height="48"/>
+    <rect x="564" y="100" width="52" height="48"/>
+    <rect x="616" y="100" width="52" height="48"/>
+    <rect x="668" y="100" width="52" height="48"/>
+    <rect x="720" y="100" width="52" height="48"/>
+    <rect x="772" y="100" width="52" height="48"/>
+  </g>
+  <line x1="824" y1="124" x2="898" y2="124" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="861" y="106" font-size="15.5" fill="#475569" text-anchor="middle">output bit</text>
+
+  <line x1="330" y1="148" x2="500" y2="238" stroke="#475569" stroke-width="1.5"/>
+  <line x1="486" y1="148" x2="516" y2="232" stroke="#475569" stroke-width="1.5"/>
+  <line x1="694" y1="148" x2="540" y2="238" stroke="#475569" stroke-width="1.5"/>
+  <circle cx="520" cy="252" r="19" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+  <text x="520" y="259" font-size="26" fill="#334155" text-anchor="middle">&#x2295;</text>
+  <text x="580" y="292" font-size="15.5" fill="#475569">the tapped cells feed one XOR</text>
+
+  <line x1="501" y1="252" x2="150" y2="252" stroke="#475569" stroke-width="1.5"/>
+  <line x1="150" y1="252" x2="150" y2="124" stroke="#475569" stroke-width="1.5"/>
+  <line x1="150" y1="124" x2="196" y2="124" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <text x="48" y="330" font-size="17.5" fill="#0f172a">each clock: the rightmost bit leaves, the register shifts, and the XOR result enters at the left end</text>
+  <text x="48" y="356" font-size="18" fill="#dc2626">the taps are public, so every bit is a fixed linear combination of the previous ones: predictable</text>
+</svg>

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 340" width="960" height="340" font-family="'Segoe UI', 'Segoe UI Symbol', Roboto, 'Helvetica Neue', Arial, 'DejaVu Sans', sans-serif" role="img" aria-labelledby="t d">
+  <title id="t">A random number generator</title>
+  <desc id="d">Three entropy sources, keypress and mouse timings, hardware interrupt timing, and the RdRand hardware generator, feed an internal state. A generate function turns the current state into pseudorandom output used for keys, nonces, and IVs.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#475569"/>
+    </marker>
+  </defs>
+  <rect width="960" height="340" rx="18" fill="#f8fafc"/>
+  <rect x="0.75" y="0.75" width="958.5" height="338.5" rx="17.25" fill="none" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <text x="48" y="48" font-size="23" font-weight="700" fill="#0f172a">A random number generator: entropy in, seeds out</text>
+  <text x="48" y="76" font-size="15.5" fill="#475569">entropy sources</text>
+
+  <g fill="#f1f5f9" stroke="#64748b" stroke-width="1.5">
+    <rect x="48" y="92" width="230" height="44" rx="8"/>
+    <rect x="48" y="150" width="230" height="44" rx="8"/>
+    <rect x="48" y="208" width="230" height="44" rx="8"/>
+  </g>
+  <g font-size="15.5" fill="#0f172a" text-anchor="middle">
+    <text x="163" y="119">keypress and mouse timings</text>
+    <text x="163" y="177">hardware interrupt timing</text>
+    <text x="163" y="235">RdRand, a hardware generator</text>
+  </g>
+
+  <line x1="278" y1="114" x2="342" y2="142" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="278" y1="172" x2="342" y2="152" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="278" y1="230" x2="342" y2="162" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="330" y="80" width="380" height="140" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <ellipse cx="420" cy="150" rx="72" ry="42" fill="#f1f5f9" stroke="#64748b" stroke-width="1.5"/>
+  <text x="420" y="146" font-size="16" fill="#0f172a" text-anchor="middle">internal</text>
+  <text x="420" y="166" font-size="16" fill="#0f172a" text-anchor="middle">state</text>
+  <line x1="492" y1="150" x2="528" y2="150" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="532" y="118" width="150" height="64" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="607" y="144" font-size="16" fill="#1e3a8a" text-anchor="middle">generate</text>
+  <text x="607" y="166" font-size="16" fill="#1e3a8a" text-anchor="middle">function</text>
+
+  <line x1="682" y1="150" x2="726" y2="150" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="734" y="144" font-size="17.5" fill="#0f172a">pseudorandom output</text>
+  <text x="734" y="166" font-size="15.5" fill="#475569">keys, nonces, IVs</text>
+
+  <text x="48" y="288" font-size="15.5" fill="#475569">entropy is folded into the state continuously, and every read draws on the state as it then stands</text>
+  <text x="48" y="318" font-size="17.5" fill="#dc2626">a PRG stretches a seed; only the generator can produce one</text>
+</svg>

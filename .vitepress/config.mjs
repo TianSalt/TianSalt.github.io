@@ -6,6 +6,28 @@ import footnote from "markdown-it-footnote";
 import container from "markdown-it-container";
 import { keepPrevNextInsideTutorial } from "./tutorial-prev-next.mjs";
 
+// Raw-HTML figures reach markdown-it as opaque html_block tokens, so the
+// math-inline rule never sees caption text and $...$ stays literal. After
+// core parsing, re-run inline markdown over figcaption contents; inline
+// HTML such as links survives the second pass untouched.
+function figcaptionInline(md) {
+  md.core.ruler.after("inline", "figcaption-inline", (state) => {
+    const walk = (tokens) => {
+      for (const token of tokens) {
+        if (token.type === "html_block" && token.content.includes("<figcaption")) {
+          token.content = token.content.replace(
+            /(<figcaption\b[^>]*>)([\s\S]+?)(<\/figcaption>)/g,
+            (match, open, inner, close) =>
+              inner.includes("$") ? open + md.renderInline(inner) + close : match,
+          );
+        }
+        if (token.children) walk(token.children);
+      }
+    };
+    walk(state.tokens);
+  });
+}
+
 export default defineConfig({
   title: "鹽語屋",
   description: "理性・溫柔・可愛",
@@ -138,6 +160,7 @@ export default defineConfig({
     math: true,
     config: (md) => {
       md.use(footnote);
+      md.use(figcaptionInline);
       md.use(container, "theorem", {
         validate: (params) => params.trim().match(/^theorem\s*(.*)$/),
         render: (tokens, idx) => {

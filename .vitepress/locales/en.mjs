@@ -106,6 +106,10 @@ export default {
                   text: "2.3 Attacks on Stream Ciphers and the One-Time Pad",
                   link: "/en/tutorials/cryptography/chapter-02/3",
                 },
+                {
+                  text: "2.4 Real-World Stream Ciphers",
+                  link: "/en/tutorials/cryptography/chapter-02/4",
+                },
               ],
             },
           ],
