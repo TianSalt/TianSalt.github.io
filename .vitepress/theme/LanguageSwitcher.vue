@@ -1,57 +1,137 @@
 <script setup>
-import { useData } from 'vitepress'
-import { ref } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref } from "vue";
+import { useData } from "vitepress";
+import { articleLink, localeHome } from "../locale-paths.mjs";
 
-const { lang } = useData()
-const isOpen = ref(false)
+defineProps({
+  mobile: { type: Boolean, default: false },
+});
 
-const languages = [
-  { code: 'en-US', label: 'English', path: '/en/' },
-  { code: 'zh-Hant', label: '漢語', path: '/zh-Hant/' },
-  { code: 'ja-JP', label: '日本語', path: '/ja/' }
-]
+const { site, localeIndex, page, frontmatter, hash, lang, theme } = useData();
+const isOpen = ref(false);
+const root = ref(null);
 
-const currentLang = languages.find(l => l.code === lang.value) || languages[0]
+// Explains, in the language being read, that the link goes to the language's
+// home page because this article has no translation.
+const HINTS = {
+  "en-US": "No translation of this page · opens that language’s home",
+  "zh-Hant": "本文暫無此語言版本 · 連結至該語言首頁",
+  "ja-JP": "この記事の翻訳はありません · その言語のホームへ",
+};
 
-function toggleMenu() {
-  isOpen.value = !isOpen.value
+const hint = computed(
+  () => HINTS[lang.value] ?? HINTS["en-US"],
+);
+
+const currentLabel = computed(
+  () => site.value.locales[localeIndex.value]?.label ?? "English",
+);
+
+const items = computed(() => {
+  const langs = frontmatter.value.langs;
+  return Object.entries(site.value.locales)
+    .filter(([key]) => key !== localeIndex.value)
+    .map(([key, value]) => {
+      // Without the build-time list, fall back to the plain counterpart link.
+      const available = Array.isArray(langs) ? langs.includes(key) : true;
+      const home = localeHome(key, value);
+      return {
+        key,
+        label: value.label,
+        available,
+        link: available
+          ? articleLink(key, page.value.relativePath) + hash.value
+          : home,
+      };
+    });
+});
+
+function toggle() {
+  isOpen.value = !isOpen.value;
 }
 
-function closeMenu() {
-  isOpen.value = false
+function close() {
+  isOpen.value = false;
 }
+
+function onDocClick(e) {
+  if (!isOpen.value) return;
+  if (!(e.target instanceof Node)) return;
+  if (!root.value?.contains(e.target)) close();
+}
+
+function onKeydown(e) {
+  if (e.key === "Escape" && isOpen.value) {
+    close();
+    root.value?.querySelector(".LanguageSwitcher-button")?.focus();
+  }
+}
+
+onMounted(() => {
+  document.addEventListener("click", onDocClick, true);
+  document.addEventListener("keydown", onKeydown);
+});
+
+onBeforeUnmount(() => {
+  document.removeEventListener("click", onDocClick, true);
+  document.removeEventListener("keydown", onKeydown);
+});
 </script>
 
 <template>
-  <div class="VPNavBarLanguage" @mouseleave="closeMenu">
+  <div ref="root" class="LanguageSwitcher" :class="{ mobile }" @mouseleave="close">
     <button
-      class="VPNavBarLanguageButton"
-      @click="toggleMenu"
-      @keydown.enter="toggleMenu"
-      @keydown.space.prevent="toggleMenu"
+      class="LanguageSwitcher-button"
+      type="button"
       :aria-expanded="isOpen"
       aria-haspopup="true"
-      aria-label="Change language"
+      :aria-label="theme.langMenuLabel || 'Change language'"
+      @click="toggle"
     >
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
-        <path fill="currentColor" d="M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0014.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7l1.62-4.33L19.12 17h-3.24Z"/>
+      <svg
+        class="icon"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        width="18"
+        height="18"
+        aria-hidden="true"
+      >
+        <path
+          fill="currentColor"
+          d="M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0014.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7l1.62-4.33L19.12 17h-3.24Z"
+        />
       </svg>
-      <span class="label">{{ currentLang.label }}</span>
-      <svg class="chevron" :class="{ open: isOpen }" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
-        <path fill="currentColor" d="M7.41 8.58L12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z"/>
+      <span class="label">{{ currentLabel }}</span>
+      <svg
+        class="chevron"
+        :class="{ open: isOpen }"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        width="14"
+        height="14"
+        aria-hidden="true"
+      >
+        <path
+          fill="currentColor"
+          d="M7.41 8.58L12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z"
+        />
       </svg>
     </button>
-    
-    <ul v-if="isOpen" class="VPNavBarLanguageMenu" role="menu">
-      <li v-for="language in languages" :key="language.code" role="none">
+
+    <ul v-if="isOpen" class="LanguageSwitcher-menu" role="menu">
+      <li v-for="item in items" :key="item.key" role="none">
         <a
-          :href="language.path"
+          class="item"
+          :class="{ untranslated: !item.available }"
+          :href="item.link"
           role="menuitem"
-          :aria-current="language.code === lang.value ? 'true' : undefined"
-          @click="closeMenu"
-          @keydown.escape="closeMenu"
+          :aria-describedby="item.available ? undefined : `ls-hint-${item.key}`"
+          @click="close"
         >
-          {{ language.label }}
+          <span class="name">{{ item.label }}</span>
+          <span v-if="!item.available" :id="`ls-hint-${item.key}`" class="hint">
+            {{ hint }}
+          </span>
         </a>
       </li>
     </ul>
@@ -59,11 +139,33 @@ function closeMenu() {
 </template>
 
 <style scoped>
-.VPNavBarLanguage {
+.LanguageSwitcher {
   position: relative;
+  display: none;
 }
 
-.VPNavBarLanguageButton {
+@media (min-width: 768px) {
+  .LanguageSwitcher:not(.mobile) {
+    display: flex;
+    align-items: center;
+  }
+
+  /* Matches the divider the built-in menu carried on its leading side. */
+  .LanguageSwitcher:not(.mobile)::before {
+    content: "";
+    width: 1px;
+    height: 24px;
+    margin-inline: 8px;
+    background-color: var(--vp-c-divider);
+  }
+}
+
+.LanguageSwitcher.mobile {
+  display: block;
+  margin-top: 24px;
+}
+
+.LanguageSwitcher-button {
   display: flex;
   align-items: center;
   gap: 6px;
@@ -78,17 +180,35 @@ function closeMenu() {
   transition: color 0.25s;
 }
 
-.VPNavBarLanguageButton:hover {
+.mobile .LanguageSwitcher-button {
+  height: 24px;
+  padding: 0;
+  font-size: 14px;
+}
+
+.LanguageSwitcher-button:hover {
   color: var(--vp-c-brand-1);
 }
 
-.VPNavBarLanguageButton:focus {
+.LanguageSwitcher-button:focus-visible {
   outline: 2px solid var(--vp-c-brand-1);
   outline-offset: -2px;
 }
 
+.icon {
+  font-size: 16px;
+}
+
+.mobile .icon {
+  margin-right: 4px;
+}
+
 .label {
   line-height: var(--vp-nav-height);
+}
+
+.mobile .label {
+  line-height: 24px;
 }
 
 .chevron {
@@ -99,7 +219,7 @@ function closeMenu() {
   transform: rotate(180deg);
 }
 
-.VPNavBarLanguageMenu {
+.LanguageSwitcher-menu {
   position: absolute;
   inset-block-start: calc(var(--vp-nav-height) - 8px);
   inset-inline-end: 0;
@@ -111,30 +231,80 @@ function closeMenu() {
   border-radius: 12px;
   box-shadow: var(--vp-shadow-3);
   list-style: none;
-  min-width: 128px;
+  min-width: 240px;
   z-index: 999;
 }
 
-.VPNavBarLanguageMenu a {
+.mobile .LanguageSwitcher-menu {
+  position: static;
+  inset: auto;
+  padding-block: 4px 0;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+  min-width: 0;
+  padding-inline-start: 24px;
+}
+
+.item {
   display: block;
   padding-block: 8px;
   padding-inline: 16px;
-  line-height: 1.5;
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--vp-c-text-1);
   text-decoration: none;
   transition: color 0.25s, background-color 0.25s;
 }
 
-.VPNavBarLanguageMenu a:hover,
-.VPNavBarLanguageMenu a:focus {
+.mobile .item {
+  padding-block: 0;
+  padding-inline: 0;
+}
+
+.mobile .name {
+  line-height: 32px;
+}
+
+.name {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--vp-c-text-1);
+}
+
+.item:hover .name,
+.item:focus-visible .name {
   color: var(--vp-c-brand-1);
+}
+
+.item:hover,
+.item:focus-visible {
   background: var(--vp-c-bg-soft);
 }
 
-.VPNavBarLanguageMenu a[aria-current="true"] {
-  color: var(--vp-c-brand-1);
-  background: var(--vp-c-bg-soft);
+.mobile .item:hover,
+.mobile .item:focus-visible {
+  background: transparent;
+}
+
+.hint {
+  display: block;
+  margin-top: 2px;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--vp-c-text-3);
+}
+
+.mobile .hint {
+  margin-top: -4px;
+  padding-bottom: 8px;
+}
+
+.mobile .item.untranslated .name {
+  color: var(--vp-c-text-2);
+}
+
+.item:focus-visible {
+  outline: 2px solid var(--vp-c-brand-1);
+  outline-offset: -2px;
 }
 </style>

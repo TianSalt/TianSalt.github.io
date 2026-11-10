@@ -3,7 +3,7 @@ title: Preface
 ---
 # Preface
 
-This series is a self-contained introduction to modern cryptography, developed from Dan Boneh’s <i>Cryptography I</i> course (Stanford / Coursera). It is written at a textbook level: every primitive is introduced through the problem it solves, stated as a precise definition, and motivated by concrete attacks.
+This series is a self-contained introduction to modern cryptography, developed from Dan Boneh’s <cite>Cryptography I</cite> course (Stanford / Coursera). It is written at a textbook level: every primitive is introduced through the problem it solves, stated as a precise definition, and motivated by concrete attacks.
 
 The series follows the three-step method that organizes the whole subject.
 
@@ -14,5 +14,5 @@ The series follows the three-step method that organizes the whole subject.
 We assume comfort with discrete mathematics and a little probability; where a tool is needed it is developed in place (for instance, the discrete-probability toolbox in Chapter 1). No prior exposure to cryptography is required.
 
 ::: warning About the sources
-This chapter was developed from the public materials of <i>Cryptography I</i> and cross-checked against Boneh and Shoup’s open textbook <i>A Graduate Course in Applied Cryptography</i>. Historical and numerical details were corrected where those materials garbled them (for example the name of Vigenère’s cipher). Any remaining error is the author’s own.
+This chapter was developed from the public materials of <cite>Cryptography I</cite> and cross-checked against Boneh and Shoup’s open textbook <cite>A Graduate Course in Applied Cryptography</cite>. Historical and numerical details were corrected where those materials garbled them (for example the name of Vigenère’s cipher). Any remaining error is the author’s own.
 :::

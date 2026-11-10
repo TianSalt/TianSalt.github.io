@@ -5,6 +5,9 @@ import jaLocale from "./locales/ja.mjs";
 import footnote from "markdown-it-footnote";
 import container from "markdown-it-container";
 import { keepPrevNextInsideTutorial } from "./tutorial-prev-next.mjs";
+import { hreflangLinks, markAvailableLocales } from "./i18n-availability.mjs";
+
+const SITE_HOSTNAME = "https://tiansalt.github.io";
 
 // Raw-HTML figures reach markdown-it as opaque html_block tokens, so the
 // math-inline rule never sees caption text and $...$ stays literal. After
@@ -180,43 +183,18 @@ export default defineConfig({
   },
 
   sitemap: {
-    hostname: "https://tiansalt.github.io",
+    hostname: SITE_HOSTNAME,
     transformItems(items) {
-      return items.map((item) => {
-        if (item.url.includes("/zh-Hant/")) {
-          return {
-            ...item,
-            links: [
-              { lang: "zh-Hant", url: item.url },
-              { lang: "en-US", url: item.url.replace("/zh-Hant/", "/en/") },
-              { lang: "ja-JP", url: item.url.replace("/zh-Hant/", "/ja/") },
-            ],
-          };
-        } else if (item.url.includes("/ja/")) {
-          return {
-            ...item,
-            links: [
-              { lang: "ja-JP", url: item.url },
-              { lang: "en-US", url: item.url.replace("/ja/", "/en/") },
-              { lang: "zh-Hant", url: item.url.replace("/ja/", "/zh-Hant/") },
-            ],
-          };
-        } else {
-          return {
-            ...item,
-            links: [
-              { lang: "en-US", url: item.url },
-              { lang: "zh-Hant", url: item.url.replace("/en/", "/zh-Hant/") },
-              { lang: "ja-JP", url: item.url.replace("/en/", "/ja/") },
-            ],
-          };
-        }
-      });
+      return items.map((item) => ({
+        ...item,
+        links: hreflangLinks(item.url, SITE_HOSTNAME),
+      }));
     },
   },
 
   transformPageData(pageData) {
     keepPrevNextInsideTutorial(pageData);
+    markAvailableLocales(pageData);
   },
 
   lastUpdated: true,

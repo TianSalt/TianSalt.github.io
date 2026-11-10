@@ -146,7 +146,13 @@ export default {
         h(
           DefaultTheme.Layout,
           { "aria-label": MAIN_LABELS[lang.value] ?? "Blog main content" },
-          { "not-found": () => h(NotFound) },
+          {
+            "not-found": () => h(NotFound),
+            // Replaces the built-in language menu, which links every locale
+            // whether or not the article exists there.
+            "nav-bar-content-after": () => h(LanguageSwitcher),
+            "nav-screen-content-after": () => h(LanguageSwitcher, { mobile: true }),
+          },
         );
     },
   },

@@ -146,6 +146,11 @@ body {
   }
 }
 
+/* Nested italic-semantic elements: inner element reverts to roman. */
+:is(i, em, cite) :is(i, em, cite) {
+  font-style: normal;
+}
+
 /* Keep paragraphs and lists on the same leading; tune via --vp-doc-line-height. */
 .vp-doc p,
 .vp-doc li {
@@ -265,6 +270,28 @@ select:focus {
 
 .footnote-ref a {
   cursor: help;
+}
+
+/*
+ * Superscript footnote markers expand the line box: the default `sup` styling
+ * uses `vertical-align: super`, lifting the raised glyph's box above the strut
+ * and so increasing the leading of any paragraph that contains one. Collapse
+ * the marker's own line-height to 0 so it contributes nothing to the line box,
+ * then raise it visually with relative positioning, which is ignored for
+ * layout and keeps every line at the fixed --vp-doc-line-height.
+ */
+.vp-doc :is(sup, sub) {
+  line-height: 0;
+  vertical-align: baseline;
+  position: relative;
+}
+
+.vp-doc sup {
+  top: -0.45em;
+}
+
+.vp-doc sub {
+  bottom: -0.2em;
 }
 
 .custom-footnote-tooltip {
@@ -401,4 +428,26 @@ mjx-container {
 .dark .adaptive-image,
 .dark .medium-zoom-image[src$=".svg"] {
   filter: invert(1) hue-rotate(180deg);
+}
+
+/* The language menu is rendered by theme/LanguageSwitcher.vue, which knows
+   which translations the current article actually has. The built-in menu links
+   every locale regardless; its own scoped rules set display at some widths, so
+   the override has to win over them. */
+.VPNavBarTranslations,
+.VPNavScreenTranslations,
+.VPNavBarExtra .translations {
+  display: none !important;
+}
+
+/* Slots only attach at the ends of the nav row, so the replacement menu has to
+   be moved back to where the built-in one sat: after the links, before the
+   appearance toggle. The nav row is a flex container, and the hidden
+   translations element keeps its place in the DOM, so the dividers still
+   separate the right pairs. */
+.VPNavBar .content-body > .appearance,
+.VPNavBar .content-body > .social-links,
+.VPNavBar .content-body > .extra,
+.VPNavBar .content-body > .hamburger {
+  order: 1;
 }
