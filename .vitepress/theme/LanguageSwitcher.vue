@@ -7,24 +7,24 @@ defineProps({
   mobile: { type: Boolean, default: false },
 });
 
-const { site, localeIndex, page, frontmatter, hash, lang, theme } = useData();
+const { site, localeIndex, page, frontmatter, hash, theme } = useData();
 const isOpen = ref(false);
 const root = ref(null);
 
-// Explains, in the language being read, that the link goes to the language's
-// home page because this article has no translation.
+// Explains, in the language of the option it sits under, that the article has
+// no translation there and the link goes to that language's home page.
 const HINTS = {
-  "en-US": "No translation of this page · opens that language’s home",
-  "zh-Hant": "本文暫無此語言版本 · 連結至該語言首頁",
-  "ja-JP": "この記事の翻訳はありません · その言語のホームへ",
+  root: "Not available in English · opens the English home",
+  "zh-Hant": "暫無漢語版本 · 開啓漢語首頁",
+  ja: "日本語版はありません · 日本語のホームへ",
 };
-
-const hint = computed(
-  () => HINTS[lang.value] ?? HINTS["en-US"],
-);
 
 const currentLabel = computed(
   () => site.value.locales[localeIndex.value]?.label ?? "English",
+);
+
+const currentLangAttr = computed(
+  () => site.value.locales[localeIndex.value]?.lang ?? "en-US",
 );
 
 const items = computed(() => {
@@ -38,7 +38,11 @@ const items = computed(() => {
       return {
         key,
         label: value.label,
+        // Lets :lang() pick the font stack and the punctuation table of the
+        // language being offered, not of the page doing the offering.
+        langAttr: value.lang,
         available,
+        hint: HINTS[key] ?? "",
         link: available
           ? articleLink(key, page.value.relativePath) + hash.value
           : home,
@@ -101,7 +105,7 @@ onBeforeUnmount(() => {
           d="M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0014.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7l1.62-4.33L19.12 17h-3.24Z"
         />
       </svg>
-      <span class="label">{{ currentLabel }}</span>
+      <span class="label" :lang="currentLangAttr">{{ currentLabel }}</span>
       <svg
         class="chevron"
         :class="{ open: isOpen }"
@@ -124,13 +128,14 @@ onBeforeUnmount(() => {
           class="item"
           :class="{ untranslated: !item.available }"
           :href="item.link"
+          :lang="item.langAttr"
           role="menuitem"
           :aria-describedby="item.available ? undefined : `ls-hint-${item.key}`"
           @click="close"
         >
           <span class="name">{{ item.label }}</span>
           <span v-if="!item.available" :id="`ls-hint-${item.key}`" class="hint">
-            {{ hint }}
+            {{ item.hint }}
           </span>
         </a>
       </li>
@@ -207,6 +212,14 @@ onBeforeUnmount(() => {
   line-height: var(--vp-nav-height);
 }
 
+/* The per-language stacks live in --vp-font-family-base and :lang() rewrites
+   that variable, so the menu has to read it itself instead of inheriting the
+   page's already-resolved family. */
+.label,
+.item {
+  font-family: var(--vp-font-family-base);
+}
+
 .mobile .label {
   line-height: 24px;
 }
@@ -231,7 +244,7 @@ onBeforeUnmount(() => {
   border-radius: 12px;
   box-shadow: var(--vp-shadow-3);
   list-style: none;
-  min-width: 240px;
+  min-width: 128px;
   z-index: 999;
 }
 

@@ -21,7 +21,7 @@ import "@fontsource/ibm-plex-sans/latin-ext-italic.css";
 import "@fontsource/ibm-plex-sans-jp/japanese.css";
 import "@fontsource/ibm-plex-sans-jp/latin.css";
 import "@fontsource/ibm-plex-sans-jp/latin-ext.css";
-import "@ibm/plex-sans-tc/css/ibm-plex-sans-tc-default.min.css";
+import "@ibm/plex-sans-tc/css/ibm-plex-sans-tc-all.min.css";
 
 const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 
