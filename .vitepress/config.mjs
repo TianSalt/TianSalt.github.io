@@ -31,6 +31,23 @@ function figcaptionInline(md) {
   });
 }
 
+// @ibm/plex-sans-tc declares no font-display, so its faces default to auto,
+// whose block period hides CJK glyphs for up to three seconds instead of
+// falling back down the family stack. Fontsource and the local faces already
+// declare swap, so only the IBM package needs the patch.
+const fontDisplaySwap = () => ({
+  postcssPlugin: "font-display-swap",
+  AtRule(atRule) {
+    if (atRule.name !== "font-face") return;
+    let declared = false;
+    atRule.walkDecls("font-display", () => {
+      declared = true;
+    });
+    if (!declared) atRule.append({ prop: "font-display", value: "swap" });
+  },
+});
+fontDisplaySwap.postcss = true;
+
 export default defineConfig({
   title: "鹽語屋",
   description: "理性・溫柔・可愛",
@@ -43,6 +60,14 @@ export default defineConfig({
         isCustomElement: (tag) => {
           return ["m-tehai", "m-pai", "l-ja", "m-p"].includes(tag);
         },
+      },
+    },
+  },
+
+  vite: {
+    css: {
+      postcss: {
+        plugins: [fontDisplaySwap()],
       },
     },
   },
