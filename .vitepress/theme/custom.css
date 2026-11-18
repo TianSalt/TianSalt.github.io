@@ -161,6 +161,11 @@ body {
   margin-top: 0;
 }
 
+.vp-doc a,
+.custom-block a {
+  font-weight: inherit;
+}
+
 .url {
   word-break: break-all;
 }

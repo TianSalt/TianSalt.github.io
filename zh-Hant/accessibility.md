@@ -1,6 +1,6 @@
 # 鹽語屋食用指南
 
-<!-- 翻譯指引：“食用”諧音“使用”，是一個充滿御宅味的玩笑 -->
+鹽語屋使用[現代標準漢語](https://en.wikipedia.org/wiki/Standard_Chinese)撰寫。
 
 ## 異體字
 
